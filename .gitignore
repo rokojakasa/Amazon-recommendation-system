@@ -1,3 +1,10 @@
+# Dataset
+data/
+
+# HPC outputs
+*.err
+*.out
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
