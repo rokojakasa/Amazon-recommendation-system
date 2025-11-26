@@ -1,0 +1,82 @@
+TF-IDF Content-Based Recommendations (10 examples, top-5)
+
+Query item idx 70994: Vincent Silver Genuine Italian Calfskin Leather Designer Dress Belt for Women(Alligator Black, 32)
+Top 5 TF-IDF similar items:
+  - idx=189877, cos_sim=0.8912, title=Vincent Silver Genuine Italian Calfskin Leather Designer Dress Belt for Women(Alligator White, 40)
+  - idx=536967, cos_sim=0.8854, title=Vincent Silver Genuine Italian Calfskin Leather Designer Dress Belt for Women(Alligator Navy, 40)
+  - idx=710631, cos_sim=0.8812, title=Vincent Silver Genuine Italian Calfskin Leather Designer Dress Belt for Women(Alligator Brown, 34)
+  - idx=557178, cos_sim=0.8776, title=Vincent Silver Genuine Italian Calfskin Leather Designer Dress Belt for Women(Alligator Navy, 44)
+  - idx=605307, cos_sim=0.8677, title=Vincent Silver Genuine Italian Calfskin Leather Designer Dress Belt for Women(Smooth Black, 32)
+
+Query item idx 639373: Carter's Unisex Baby Crocheted Reindeer Booties; Brown (0-3 Months)
+Top 5 TF-IDF similar items:
+  - idx=6580, cos_sim=0.6414, title=Carter's Baby Crocheted Cat Halloween Booties (Newborn)
+  - idx=315085, cos_sim=0.5501, title=Carter's Reindeer Knit Hat (12-24 Months) Brown
+  - idx=595876, cos_sim=0.5075, title=Carter's Baby Boys' 3 Piece Set (Brown/Racoons, 6 Months)
+  - idx=526883, cos_sim=0.4899, title=Carter's Baby Girls' 6-Pack Socks Booties
+  - idx=83383, cos_sim=0.4867, title=Carter's Baby Boys' 1-Piece Christmas Reindeer Fleece Pajamas (24 Months) Red
+
+Query item idx 73724: 12shengxiao Pickle Moriah Elizabeth Youth Hoodie Pullover Sweatshirt for Boys Girls Kids 7-8 Years
+Top 5 TF-IDF similar items:
+  - idx=291282, cos_sim=0.9607, title=12shengxiao Pickle Moriah Elizabeth Youth Hoodie Pullover Sweatshirt for Boys Girls Kids 10-12 Years
+  - idx=360419, cos_sim=0.9460, title=12shengxiao Pickle Moriah Elizabeth Youth Hoodie Pullover Sweatshirt for Boys Girls Kids 14-16 Years
+  - idx=75245, cos_sim=0.4741, title=GMGMJY Moriah-Elizabeth-Me Merch Funny Adjustable Sports Cotton Baseball Hat Blue
+  - idx=66801, cos_sim=0.4336, title=Arcicl Kids Hoodie Among-Us Youth Hooded Sweatshirts, Pullover Hoodies for Boys Girls 7-8 Years
+  - idx=436398, cos_sim=0.4321, title=Moriah Elizabeth Merch Crop Hoodies Women Cat Ears Kawaii top Hooded Sweatshirt Girl Tracksuit (Black,Small)
+
+Query item idx 540756: CIOR Women's Ultra-Lightweight Stand Collar Packable Down Puffer Jacket Coat with Travel Bag
+Top 5 TF-IDF similar items:
+  - idx=276874, cos_sim=1.0000, title=CIOR Women's Ultra-Lightweight Stand Collar Packable Down Puffer Jacket Coat with Travel Bag,CYRF02,02Orange,M
+  - idx=266036, cos_sim=0.8595, title=CIOR Women's Ultra-Lightweight Hooded Packable Down Puffer Jacket Coat with Travel Bag
+  - idx=268363, cos_sim=0.6443, title=Women's Hooded Packable Down Jacket Ultra Light Weight Short Puffer Coat with Travel Bag
+  - idx=782803, cos_sim=0.6443, title=Women's Hooded Packable Down Jacket Ultra Light Weight Short Puffer Coat with Travel Bag
+  - idx=464361, cos_sim=0.6299, title=Molodo Men's Ultra Lightweight Stand Collar Outwear Packable Short Down Jacket Puffer Winter Coat Navy Blue
+
+Query item idx 362594: Girls Dress Princess Sunflower Lace Belt Party Summer Cotton Size 6-12 Years 11-12 Years / Multi-Color
+Top 5 TF-IDF similar items:
+  - idx=812991, cos_sim=0.6039, title=HY54 Girls Dress Princess Sunflower Lace Belt Party Summer Cotton Size 9-10
+  - idx=521196, cos_sim=0.5822, title=HY52 Girls Dress Princess Sunflower Lace Belt Party Summer Cotton Size 7,Multicolor,
+  - idx=69255, cos_sim=0.5454, title=WEWINK PLUS Girls Cotton Leggings Pants for Toddler Kids 3-12 Years (Style D, 11-12 Years)
+  - idx=533734, cos_sim=0.5454, title=WEWINK PLUS Girls Cotton Leggings Pants for Toddler Kids 3-12 Years (Style F, 11-12 Years)
+  - idx=782710, cos_sim=0.5316, title=Kid Girls White Dress Princess Casual Dress for Toddler Little Girl 3-12 Years (Short Sleeve White 2, 10-12 Years(150))
+
+Query item idx 357749: Sterling Silver Hammered Wave Cuff Bangle Bracelet
+Top 5 TF-IDF similar items:
+  - idx=380658, cos_sim=0.7628, title=DL001 Hammered Gold CZ Wave Bangle Bracelet.
+  - idx=563173, cos_sim=0.6433, title=Solid 925 Sterling Silver 13.5mm Hammered Cuff Bangle
+  - idx=129129, cos_sim=0.6272, title=Simple Hammered Cuff Bracelet
+  - idx=812792, cos_sim=0.5904, title=Sterling Silver Bangle Bracelet
+  - idx=608417, cos_sim=0.5904, title=Sterling Silver Bangle Bracelet
+
+Query item idx 576111: Romwe Women's Flower Print Floral Sexy Keyhole Self Tie Back Peplum Ruffle Cami Top #White#
+Top 5 TF-IDF similar items:
+  - idx=294733, cos_sim=1.0000, title=Romwe Women's Flower Print Floral Sexy Keyhole Self Tie Back Peplum Ruffle Cami Top White L
+  - idx=467074, cos_sim=0.9731, title=Romwe Women's Flower Print Floral Sexy Keyhole Self Tie Back Peplum Ruffle Cami Top Black L
+  - idx=129143, cos_sim=0.9318, title=Romwe Women's Flower Print Floral Sexy Keyhole Self Tie Back Peplum Ruffle Cami Top Multicolor L
+  - idx=255893, cos_sim=0.8245, title=Romwe Women's Flower Print Floral Sexy Keyhole Racerback Peplum Ruffle Cami Top Black L
+  - idx=177799, cos_sim=0.7948, title=Romwe Women's Flower Print Floral Sexy Keyhole Racerback Peplum Ruffle Cami Top Beige M
+
+Query item idx 77794: NINEXIS Women's Gathered Elastic Waistband Drapey Maxi Dress Burgundy M
+Top 5 TF-IDF similar items:
+  - idx=72989, cos_sim=1.0000, title=NINEXIS Women's Gathered Elastic Waistband Drapey Maxi Dress Burgundy S
+  - idx=260586, cos_sim=1.0000, title=NINEXIS Women's Gathered Elastic Waistband Drapey Maxi Dress Burgundy L
+  - idx=198420, cos_sim=0.9491, title=NINEXIS Women's Gathered Elastic Waistband Drapey Maxi Dress Black M
+  - idx=262578, cos_sim=0.9491, title=NINEXIS Women's Gathered Elastic Waistband Drapey Maxi Dress Black L
+  - idx=485156, cos_sim=0.9158, title=NINEXIS Women's Gathered Elastic Waistband Drapey Maxi Dress Royal M
+
+Query item idx 166484: Turtle Necklace, Opal Sea Turtle Pendant Necklace Mother Child Turtle Pendant Necklace, Gift for Mom Birthday from Daughter, Gifts for Daughter Birthday from Mom (Blue Opal)
+Top 5 TF-IDF similar items:
+  - idx=642813, cos_sim=0.6669, title=Sea Turtle Necklace with Chain and Free Box | Silver Sea Turtle Jewelry Great Gifts for Mother Daughter Jewelry Blue Opal Sea Turtle Pendant Necklace Birthstone Jewelry for Women
+  - idx=213309, cos_sim=0.6424, title=Turtle Animal Pendant Necklace Zirconia Big Small Turtle Necklace Choker for Women Girl Mom And Daughter Family Jewelry Gift (Gold)
+  - idx=146028, cos_sim=0.6301, title=Fashion Blue Turtle Opal Set Earring Pendant with Chain Turtle Mother and Son Necklace
+  - idx=425396, cos_sim=0.6183, title=Cute Opal Turtle Necklace Pendant Colorful Small Sea Turtle Tortoise Animal Necklace for Women Girls Summer Beach Jewelry (Blue)
+  - idx=461143, cos_sim=0.5965, title=Scddboy Vintage Sea Turtle Pendant Necklace for Women
+
+Query item idx 709297: Gypsy Jewels Cute Dainty Dangle Elephant Charms Gold Tone Small Fit Cuff Bracelet
+Top 5 TF-IDF similar items:
+  - idx=805669, cos_sim=0.5851, title=Gypsy Jewels Lucky Elephant Dangle Charms Large Beaded Boutique Stretch Bracelet
+  - idx=792204, cos_sim=0.5434, title=Gypsy Jewels Elephant Gold Tone & Silver Tone Filigree Disk Boutique Stretch Bracelet
+  - idx=46770, cos_sim=0.5058, title=Gypsy Jewels Cute Blue Rhinestone Round Fish Silver Tone Small Necklace
+  - idx=194478, cos_sim=0.5056, title=Gypsy Jewels Simple Theme Cuff Bracelet
+  - idx=346206, cos_sim=0.5031, title=Gypsy Jewels Trendy Anchor Rhinestone Silver Tone Small Dainty Necklace and Earrings Set (Blue Silver Tone)
+

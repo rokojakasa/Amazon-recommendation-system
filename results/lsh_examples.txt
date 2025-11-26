@@ -1,0 +1,35 @@
+Item–item CF with MinHash+LSH examples (NUM_HASHES=128, NUM_BANDS=32, K=5)
+
+Query item idx 98851: roswear Women's Summer Casual Round Neck Ruched Short Sleeve Maxi Dress with Pockets Army Green Medium
+Top 5 similar products:
+  (No candidates found)
+Query item idx 137850: Juniors' Harry Potter Hogwarts Rainbow Stripe Ringer T-Shirt-Large
+Top 5 similar products:
+  (No candidates found)
+Query item idx 30586: TINSTREE Women V Neck Spaghetti Strap Tank Tops Loose Casual Sexy Sleeveless Vest Summer Soft Shirts Blouses White
+Top 5 similar products:
+  - idx=30585, score=1.0000, title=Qtake Fashion Women Jumpsuit Loose Deep V-Neck Beach Rompers Playsuit White
+  - idx=30587, score=1.0000, title=ASYOLY Women's Floral Print Long Sleeve V Neck Shirts Loose Casual Tunic Loose Drawstring Tops Blouses
+
+Query item idx 338976: Square Tassel Crossbody Pu Leather Small Crossbody Bag(Tan)
+Top 5 similar products:
+  (No candidates found)
+Query item idx 301946: Romwe Women's Cute Striped Bow Tie Front Spaghetti Strap Shirred Back Peplum Cami Tank Top Vest Green M
+Top 5 similar products:
+  (No candidates found)
+Query item idx 275478: Tournesol Women's Pajama Sets V Neck Short Sleeve Pjs Set Sleepwear Nightwear with Pockets Black
+Top 5 similar products:
+  (No candidates found)
+Query item idx 172396: iPhone 7 Plus Case, Capsule-Case Slim Fit Snap-on (Rose Pink) Hard Case for Apple iPhone 7 Plus - (Red Daisy)
+Top 5 similar products:
+  - idx=172397, score=1.0000, title=BLOOMCHARM Gifts for Women Silver Plated Necklace Cubic Zirconia Exquisite Pendant Necklace for Girls
+
+Query item idx 126951: Mosichi Crystal Ball Stud Earrings Women Bubble Earrings Pendientes
+Top 5 similar products:
+  (No candidates found)
+Query item idx 674121: Zeta Ville - Womens Maternity Nursing T-shirt Top Tee - Layered Neckline - 790c (Off White, US 8/10, L)
+Top 5 similar products:
+  (No candidates found)
+Query item idx 107472: CCbodily Halloween Kunoichi Masquerade Mask for Women - Rhinestone Masquerade Mask Necklace Jewelry for Women (Black2)
+Top 5 similar products:
+  (No candidates found)
