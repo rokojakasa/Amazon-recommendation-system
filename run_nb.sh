@@ -11,6 +11,7 @@
 module load python3
 source ~/minhash_env/bin/activate
 
-cd /zhome/4f/1/223566/home/computational_tools
+cd /zhome/4f/1/223566/home/computational_tools/Amazon-recommendation-system
+export PYTHONPATH=$(pwd):$PYTHONPATH
+python src/recommender_lsh.py
 
-python Amazon_LSH_v2.py

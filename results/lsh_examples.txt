@@ -1,35 +1,74 @@
-Item–item CF with MinHash+LSH examples (NUM_HASHES=128, NUM_BANDS=32, K=5)
+Item–item CF with MinHash+LSH examples (NUM_HASHES=128, NUM_BANDS=64, K=5)
 
-Query item idx 98851: roswear Women's Summer Casual Round Neck Ruched Short Sleeve Maxi Dress with Pockets Army Green Medium
+Query item idx 14592: elabo 4-Tier Metal Mesh Utility Rolling Cart, Storage Organizer Trolley Services Cart with Lockable Wheels for Kitchen, Bathroom, Living Room (White)
 Top 5 similar products:
-  (No candidates found)
-Query item idx 137850: Juniors' Harry Potter Hogwarts Rainbow Stripe Ringer T-Shirt-Large
-Top 5 similar products:
-  (No candidates found)
-Query item idx 30586: TINSTREE Women V Neck Spaghetti Strap Tank Tops Loose Casual Sexy Sleeveless Vest Summer Soft Shirts Blouses White
-Top 5 similar products:
-  - idx=30585, score=1.0000, title=Qtake Fashion Women Jumpsuit Loose Deep V-Neck Beach Rompers Playsuit White
-  - idx=30587, score=1.0000, title=ASYOLY Women's Floral Print Long Sleeve V Neck Shirts Loose Casual Tunic Loose Drawstring Tops Blouses
+  - idx=7481, score=0.2500, title=Piowio 3 Tier Utility Storage Cart Rolling Cart Organizer Shelf with 6PCS Hanging Cups for Home Kitchen Office Storage (Black)
+  - idx=5102, score=0.2188, title=BOENFU Staple Gun Kit,3 in 1 Manual Nail Gun Stapler Set with 1200 Staples(D,U and T-Type) Staple Remover Hand Staple Gun Kit with case for Upholstery,Fixing,Decoration,Carpentry,Furniture,DIY Repair
+  - idx=5500, score=0.1719, title=Laptop Bed Table, AboveTEK 25.6"x 19.29" Large Foldable Laptop Desk for Bed w/ Storage Drawer, Phone Holder, Book Tablet Stand, Cup Holder - Heavy Duty Lap Desk for Adults Bed & Sofa(Birch)
+  - idx=21197, score=0.1641, title=Rolling Whiteboard 48 x 36 - maxtek Height Adjustable Magnetic White Board, Double Sided Mobile Dry Erase Board, 4' x 3' Easel White Board on Wheels, Large Portable Flipping Whiteboard with Stand
+  - idx=5176, score=0.1484, title=Niche Lux 35" Desk Shell- High Gloss White
 
-Query item idx 338976: Square Tassel Crossbody Pu Leather Small Crossbody Bag(Tan)
+Query item idx 3278: Washable No Run School Glue
 Top 5 similar products:
-  (No candidates found)
-Query item idx 301946: Romwe Women's Cute Striped Bow Tie Front Spaghetti Strap Shirred Back Peplum Cami Tank Top Vest Green M
-Top 5 similar products:
-  (No candidates found)
-Query item idx 275478: Tournesol Women's Pajama Sets V Neck Short Sleeve Pjs Set Sleepwear Nightwear with Pockets Black
-Top 5 similar products:
-  (No candidates found)
-Query item idx 172396: iPhone 7 Plus Case, Capsule-Case Slim Fit Snap-on (Rose Pink) Hard Case for Apple iPhone 7 Plus - (Red Daisy)
-Top 5 similar products:
-  - idx=172397, score=1.0000, title=BLOOMCHARM Gifts for Women Silver Plated Necklace Cubic Zirconia Exquisite Pendant Necklace for Girls
+  - idx=10665, score=0.0391, title=Southworth® Premium-Weight Foil Certificates, 8 1/2" x 11", White/Silver Foil Spiro, Pack of 15
+  - idx=11070, score=0.0312, title=Elmer's E340NRSS School Glue Jar, Washable, 1 gal Capacity, White
+  - idx=9051, score=0.0156, title=Paper Mate White Pearl Erasers, Large, 12 Count
 
-Query item idx 126951: Mosichi Crystal Ball Stud Earrings Women Bubble Earrings Pendientes
+Query item idx 36048: Rhode Island Novelty 12.25" Stop Light LAMP
 Top 5 similar products:
-  (No candidates found)
-Query item idx 674121: Zeta Ville - Womens Maternity Nursing T-shirt Top Tee - Layered Neckline - 790c (Off White, US 8/10, L)
+  - idx=36050, score=0.0703, title=Creative Co-Op DA0232 Tin Hanging Chalkboard with Decorative Frame
+  - idx=73163, score=0.0625, title=Duck Washi crafting paper tape, 0.75 in. by 240 inches. Single roll (Pastel Blue)
+  - idx=36209, score=0.0625, title=Nicely Neat Stair Climbing Cart, Sturdy Birdy Farmers Market Cart
+  - idx=28484, score=0.0312, title=Lowpricenice Ultra Slim Cloth Wrist Rest Mouse Pad (Black)
+
+Query item idx 32098: Small 3 1/8 Inch Square Envelopes - 50 Pk (White)
 Top 5 similar products:
-  (No candidates found)
-Query item idx 107472: CCbodily Halloween Kunoichi Masquerade Mask for Women - Rhinestone Masquerade Mask Necklace Jewelry for Women (Black2)
+  - idx=32096, score=0.1016, title=2021-2022 Planner - Weekly & Monthly Planner 2021-2022 with Marked Tabs, 8.46" x 6.37", Jul 2021 - Jun 2022, Twin-Wire Binding, Thick Paper, Back Pocket, Elastic Closure, Beautiful Pattern
+  - idx=45138, score=0.0781, title=U.S. Art Supply 3-Piece Water Coloring Brush Pen Set of 3 (Sizes - 01 Fine, 02 Medium, 03 Broad) - Refillable, Watercolor, Calligraphy, Painting
+  - idx=26093, score=0.0703, title=Boxes Fast Small Business Packaging, Shipping Box Bulk | Cardboard, Gift, Storage, Small Corrugated Boxes, 6x6x3 663
+  - idx=33621, score=0.0703, title=Victor EZ12SBL 12" Easy Read Ruler, No-Glare Straight Edge, Labeled in MM, CM & in (1/2", 1/4", 1/8", 1/16") Stainless Steel, Pink
+  - idx=16928, score=0.0547, title=NobleWorks - Discontinued Card -50 Crystal Clear Plastic Boxes
+
+Query item idx 29256: Elmeplh Nano Double Sided Adhesive Tape Heavy Duty - Multipurpose Transparent Poster Tape, Reusable Strong Sticky Tape for Carpet Mats/Paste Items/Photos Frames/Craft Wall Mounting(9.84FT)
 Top 5 similar products:
-  (No candidates found)
+  - idx=45103, score=0.1172, title=2 Pack Mini Clipboard, Small Clipboards with Pen Holder, Leather Black Clipboard for Nursing Classroom, Smooth Writing Low Magnetic Profile Clip Boards for Kids Women Teacher Office, 8.6" x 4.7"
+  - idx=35431, score=0.1094, title=Magnetic Tape, Flexible Magnet Tape Strips Roll (1/2'' Wide x 18 ft Long) with Strong 3M Adhesive Backing, Perfect for DIY, Art Projects, whiteboards & Fridge Organization
+  - idx=75695, score=0.1094, title=180 Pieces Metal Rim Tags Key Tags Round Paper Tags with Metal Rings for Car Keys and Door Keys,White
+  - idx=34468, score=0.0938, title=Woolsche Paper Shredder, 18-Sheet Cross Cut with 7.93-Gallon Pull Out Basket, P-4 Security Level, 3-Mode Design Shred Paper and Credit Card, Durable&Fast with Auto Jam Proof System Shredder for Office
+  - idx=73103, score=0.0938, title=Wisifayardin 2pcs Cardinal Bird Statue for Home Decor - Handcrafted Red Cardinal Figurine for Bird Lovers - Red Cardinal Bird Sculpture for Collectors
+
+Query item idx 18289: Levenger Circa Discs - Set of 22, 2-Inch - Black (ADS5065)
+Top 5 similar products:
+  - idx=8810, score=0.1016, title=Levenger Translucent Circa Covers, Letter - Set of 2 (ADS4285 LTR)
+  - idx=35379, score=0.0781, title=Acrylic File Organizer 4 Section Holder, Laptop, Folder, Palette Makeup, Office, Letter, Notebook, Electronics, Purse, Book, Clear Lucite Paper Sorter, 9-Inch Wide x 7-Inch Deep x 7-Inch High
+  - idx=35061, score=0.0781, title=LUXPaper A2 Invitation Envelopes | Peel & Press | 4 3/8" x 5 3/4" | Midnight Black | 80lb. Text | 50 Qty
+  - idx=76122, score=0.0781, title=Staples Arc Notebook Project Planner Filler Paper, Letter-sized, White, 50 Sheets
+  - idx=46316, score=0.0703, title=Vertical Deluxe Durable PU Leather ID Badge Holder with 1 ID Window and 1 Card Slot and Alligator Clip (Brown)
+
+Query item idx 13434: Mintra Office Steno Book - (BRIGHTS - Purp/Wht/Teal/Orange) - 6inx9in, 100 Sheets, 8 Pads/Pack, Narrow Ruled - Poly Cover, Notebook for writing notes in school, university, college, work, office
+Top 5 similar products:
+  - idx=69969, score=0.0156, title=Scotch Mounting, Fastening & Surface Protection Scotch Removable Poster Tape, 3/4 x 150 Inches, 3 Pack, 109-3
+  - idx=36175, score=0.0156, title=2 Pack Divider Sticky Notes Memo Set for Binders, Notebooks, Planners w/ Index Tabs, Flags (Multicolored)
+
+Query item idx 71483: Tintris Journal Cover for 5 x 8 A5 Moleskine LEUCHTTURM Notebooks Journals Planners Sketchbooks Legal pads with Pen Holder Elastic Band, Water Resistant Notebook Cover, Classy Waxed Canvas, Olive
+Top 5 similar products:
+  - idx=61851, score=0.0781, title=3-Tier Rolling Cart with Wheels, G-Hemobel Metal Utility Cart with 3 Hanging Cups and 2 Lockable Wheels, Organizer Cart with Multi-Functional Storage, White
+  - idx=50530, score=0.0625, title=Nicpro 0.5 mm Art Mechanical Pencils Set in Storage Case, 3 PCS Metal Drafting Pencil Lead Pencil with 6 Tube HB Lead Refills, 3 Erasers, 9 PCS Eraser Refills for Artist Writing, Drawing, Sketching
+  - idx=70667, score=0.0547, title=Ericter Sticky Tabs 1800 Pieces Transparent Sticky Notes, Highlighter Strips for Bookmarks, Writable and Repositionable Index Annotation Tabs
+  - idx=49551, score=0.0547, title=137 Toner Cartridge 2 Packs Compatible for Canon 137 Black Toner Cartridge, use for Canon ImageCLASS MF232w, MF242dw, MF212w, MF216n, MF217w, MF244dw, MF247dw, MF249dw, MF227dw, MF229dw Laser Printers
+  - idx=51476, score=0.0547, title=diodrio Journal Notebook Cover for Travel 5.5 x 8.25 A5 Moleskine LEUCHTTURM 1917 Journal Notebook Planner Sketchbook Legal Pad, refillable, Water Resistant, Elastic Band, Inner Pockets, Black
+
+Query item idx 11395: Large Dry Erase Calendar for Wall - Undated 3 Month Wall Calendar, 40" x 28"(Vertical), Erasable Laminated Calendar Whiteboard with 5 Markers ＆ 8 Stickers, Monthly Wall Calendar for Home, Office and Classroom - 3 Month Purple
+Top 5 similar products:
+  - idx=50184, score=0.0312, title=Canon LBP113w imageCLASS (2207C004) Wireless, 23 Pages Per Minute, Black & Canon Genuine Toner, Cartridge 047 Black (2164C001), 1 Pack imageCLASS LBP113w, MF113w Laser Printer
+  - idx=7666, score=0.0312, title=Mr. Pen Retractable Mechanical Eraser Pen, Pack of 6, Assorted Color
+  - idx=53796, score=0.0312, title=2022 Calendar - Wall Calendar with Floral Monthly Page, JAN 2022 - DEC 2022, 15” x 11.5”, Twin-Wire Binding & Large Blocks, Perfect for School, Office & Home Planning
+
+Query item idx 77402: Yeahgoshopping Clear Packing Tape Rolls 2" Width x 60 Yards or 110 Yards Thickness 2 Mil Clear Tape Use for Packages Packing, Warehouse, Office, Shool (1 Roll 110 Yards)
+Top 5 similar products:
+  - idx=77401, score=0.1328, title=AQG Gel Seat Cushion, Cooling seat Cushion Thick Big Breathable Honeycomb Design Absorbs Pressure Points Seat Cushion with Non-Slip Cover Gel Cushion for Office Chair Home Car seat Cushion (Green)
+  - idx=75020, score=0.1250, title=Jenbode Identity Protection Roller Stamps - Anti Theft Prevention Stamps - Guard Your ID Advanced Confidential Address Blocker（Purple）
+  - idx=77189, score=0.1172, title=Sugarneon LED Neon Open Sign with Adapter,16.5"x 9" Adjustable Brightness Open Sign for Business,Ultra Bright Neon Lights for Stores Restaurants Offices Retails Shops Storefronts Wall Decor
+  - idx=76775, score=0.1016, title=INKCLOUD 275XL Black Ink Cartridges High Capacity Compatible with Canon PG-275 XL PG275 Black (4981C001) for Canon PIXMA TS3522 TS3520 TR4720 Printer, 2Pack
+  - idx=71435, score=0.0938, title=Sweetcrispy Office Ergonomic Computer Headrest and Lumbar Support, High Back Mesh Desk Chair 3D Armrest Retractable Footrest, Black
+

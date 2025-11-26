@@ -3,44 +3,35 @@ import random
 import time
 from collections import defaultdict
 from typing import Dict, List, Set, Tuple
+import pandas as pd
 
 import mmh3
 import numpy as np
 from tqdm import tqdm
+from src.data_loader import load_preprocess_5core
 
-from src.data_loader import load_amazon_fashion
 
+import src.data_loader
+print("USING DATA LOADER FROM:", src.data_loader.__file__)
+print("ATTRIBUTES:", dir(src.data_loader))
 
 
 NUM_HASHES = 128
-NUM_BANDS = 32
+NUM_BANDS = 64
 ROWS_PER_BAND = NUM_HASHES // NUM_BANDS
 RATING_THRESHOLD = 3
 RANDOM_SEED = 42
 
 
-def build_user_item_mappings(reviews_df):
-    """Create integer indices for users and items and add them to reviews_df."""
-    unique_users = reviews_df["user_id"].unique()
-    user_to_idx = {uid: i for i, uid in enumerate(unique_users)}
-    idx_to_user = {i: uid for uid, i in user_to_idx.items()}
 
-    unique_products = reviews_df["parent_asin"].unique()
-    product_to_idx = {pid: i for i, pid in enumerate(unique_products)}
-    idx_to_product = {i: pid for pid, i in product_to_idx.items()}
-
-    reviews_df["user_idx"] = reviews_df["user_id"].map(user_to_idx)
-    reviews_df["product_idx"] = reviews_df["parent_asin"].map(product_to_idx)
-
-    return user_to_idx, idx_to_user, product_to_idx, idx_to_product
-
-
-def build_item_to_users(reviews_df) -> Dict[int, Set[int]]:
+def build_item_to_users(df: pd.DataFrame) -> Dict[int, Set[int]]:
     """Map each product_idx -> set(user_idx) with rating >= threshold."""
-    item_to_users = defaultdict(set)
-    for _, row in reviews_df.iterrows():
-        if row["rating"] >= RATING_THRESHOLD:
-            item_to_users[int(row["product_idx"])].add(int(row["user_idx"]))
+    # item_to_users = defaultdict(set)
+    # for _, row in reviews_df.iterrows():
+    #     if row["rating"] >= RATING_THRESHOLD:
+    #         item_to_users[int(row["product_idx"])].add(int(row["user_idx"]))
+    filtered = df[df["rating"] >= RATING_THRESHOLD]
+    item_to_users = filtered.groupby("product_idx")["user_idx"].apply(set).to_dict()
     return item_to_users
 
 
@@ -132,26 +123,19 @@ def get_top_k_similar_products(
 
 def main():
     os.makedirs("results", exist_ok=True)
-
     t0 = time.time()
-    meta_df, reviews_df = load_amazon_fashion()
+    interaction_df = load_preprocess_5core()
     print("Loaded meta and reviews in", time.time() - t0, "seconds")
 
     t1 = time.time()
-    user_to_idx, idx_to_user, product_to_idx, idx_to_product = build_user_item_mappings(
-        reviews_df
-    )
-    item_to_users = build_item_to_users(reviews_df)
+    item_to_users = build_item_to_users(interaction_df)
     print("Built mappings and item_to_users in", time.time() - t1, "seconds")
+    
+    print("Number of rows in interaction_df:", len(interaction_df))
+    interaction_df.head(20)
 
-    asin_to_title = dict(zip(meta_df["parent_asin"], meta_df["title"]))
-    idx_to_title = {
-        idx: asin_to_title.get(asin, "Unknown Title")
-        for idx, asin in idx_to_product.items()
-    }
-
-    def get_product_title(product_idx: int) -> str:
-        return idx_to_title.get(product_idx, "Unknown Title")
+    idx_to_title = interaction_df.drop_duplicates("product_idx").set_index("product_idx")["title"].to_dict()
+    def get_product_title(pid): return idx_to_title.get(pid, "Unknown Title")
 
     hash_seeds = make_hash_seeds(NUM_HASHES)
 
@@ -231,7 +215,7 @@ def main():
     with open("results/lsh_bands.pkl", "wb") as f:
         pickle.dump(bands, f)
 
-    with open("results/lsh_idx_to_title.pkl", "wb") as f:
+    with open("results/lsh_idx_to_title.pklcs", "wb") as f:
         pickle.dump(idx_to_title, f)
 
     print("Saved LSH data to results/*.pkl")
