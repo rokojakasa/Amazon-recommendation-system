@@ -1,74 +1,63 @@
 Item–item CF with MinHash+LSH examples (NUM_HASHES=128, NUM_BANDS=64, K=5)
 
-Query item idx 14592: elabo 4-Tier Metal Mesh Utility Rolling Cart, Storage Organizer Trolley Services Cart with Lockable Wheels for Kitchen, Bathroom, Living Room (White)
+Query item idx 83927: UrSpeedtekLive J7 Case, Galaxy J7 Wallet Case, Premium PU Leather Flip Wallet Case Cover w/Card Slots & Kickstand Compatible with Samsung Galaxy J7 2015 -Tree
 Top 5 similar products:
-  - idx=7481, score=0.2500, title=Piowio 3 Tier Utility Storage Cart Rolling Cart Organizer Shelf with 6PCS Hanging Cups for Home Kitchen Office Storage (Black)
-  - idx=5102, score=0.2188, title=BOENFU Staple Gun Kit,3 in 1 Manual Nail Gun Stapler Set with 1200 Staples(D,U and T-Type) Staple Remover Hand Staple Gun Kit with case for Upholstery,Fixing,Decoration,Carpentry,Furniture,DIY Repair
-  - idx=5500, score=0.1719, title=Laptop Bed Table, AboveTEK 25.6"x 19.29" Large Foldable Laptop Desk for Bed w/ Storage Drawer, Phone Holder, Book Tablet Stand, Cup Holder - Heavy Duty Lap Desk for Adults Bed & Sofa(Birch)
-  - idx=21197, score=0.1641, title=Rolling Whiteboard 48 x 36 - maxtek Height Adjustable Magnetic White Board, Double Sided Mobile Dry Erase Board, 4' x 3' Easel White Board on Wheels, Large Portable Flipping Whiteboard with Stand
-  - idx=5176, score=0.1484, title=Niche Lux 35" Desk Shell- High Gloss White
+  - idx=55746, score=0.1094, title=CaseHaven Galaxy J7 Case, Glitter Crystal Heart Floral Series - Slim Luxury Bling Rhinestone Clear TPU Case with Ring Stand for Samsung Galaxy J7 J700 (2015) - Rose Gold
+  - idx=64406, score=0.0781, title=J7 Cases,Galaxy J7 Case 2015 Clear with Screen Protector,J700M Case(Not Fit J710 2016) AnoKe Glitter TPU Thin Slim Fit Protective Cell Phone Cover for Girls Women Men Kids Galaxy J700 TM Clear
+  - idx=78304, score=0.0625, title=TJS Samsung Galaxy J3 Emerge/J3 Prime/Amp Prime 2/Express Prime 2/Sol 2/J3 Mission/J3 Luna Pro/J3 Eclipse Case, With [Tempered Glass Screen Protector] Hybrid Shockproof Phone Case Armor (Stardust)
 
-Query item idx 3278: Washable No Run School Glue
+Query item idx 14600: Snowfox Samsung Galaxy S8+ Plus Case, Full-Body Protection Rugged Clear Bumper Case with Built-in Screen Protector for Samsung Galaxy S8+ Plus 2017 Release
 Top 5 similar products:
-  - idx=10665, score=0.0391, title=Southworth® Premium-Weight Foil Certificates, 8 1/2" x 11", White/Silver Foil Spiro, Pack of 15
-  - idx=11070, score=0.0312, title=Elmer's E340NRSS School Glue Jar, Washable, 1 gal Capacity, White
-  - idx=9051, score=0.0156, title=Paper Mate White Pearl Erasers, Large, 12 Count
+  - idx=56677, score=0.0625, title=JETech Case for Samsung Galaxy S4, Protective Cover, Grey
+  - idx=29210, score=0.0547, title=tekSonic S6 Case, Samsung Galaxy S6 Case (Gold) Armor Series [Card Slide Slot][Drop Protection][Heavy Duty][Wallet] Full Cover Protection Tough Case for Samsung Galaxy S6 (Golden)
+  - idx=28631, score=0.0391, title=Samsung Galaxy S20 FE Case/S20 FE 5G X-level Slim Fit Ultra-Thin Soft TPU Super S20 FE Phone Cover [Guardian Series] Matte Finish Coating Case for Samsung S20 FE/ S20 FE 5G -Gold
+  - idx=66905, score=0.0391, title=Galaxy S8 Plus Case, Clear Galaxy S8 Plus Case, MOSNOVO Cherry Blossom Floral Printed Flower Clear Design Plastic Hard Slim Case with TPU Bumper Case Cover for Samsung Galaxy S8 Plus
+  - idx=9602, score=0.0312, title=i-Blason Galaxy S8+ Plus Case, Scratch Resistant Clear Halo Series Samsung Galaxy S8+ Plus Hybrid Bumper Case Cover 2017 Release (Clear)
 
-Query item idx 36048: Rhode Island Novelty 12.25" Stop Light LAMP
+Query item idx 3278: Micro USB Cable, HI-CABLE Fast+ 3 pack 6ft Braided Long Charging Cord For Samsung Galaxy S7 S6 Edge Plus, Note 4/ 5,S4 S5 Active, Tab A S/ S2 Pro, PS3/ 4, Android Phone Gold-Plated (Silver)
 Top 5 similar products:
-  - idx=36050, score=0.0703, title=Creative Co-Op DA0232 Tin Hanging Chalkboard with Decorative Frame
-  - idx=73163, score=0.0625, title=Duck Washi crafting paper tape, 0.75 in. by 240 inches. Single roll (Pastel Blue)
-  - idx=36209, score=0.0625, title=Nicely Neat Stair Climbing Cart, Sturdy Birdy Farmers Market Cart
-  - idx=28484, score=0.0312, title=Lowpricenice Ultra Slim Cloth Wrist Rest Mouse Pad (Black)
+  - idx=35406, score=0.0547, title=kate spade new york Protective Hardshell Case for Samsung Galaxy S9 - Multi Scatter Dot Gold / Clear with Stones
+  - idx=35407, score=0.0547, title=YIIYOUNG 10 Pack iWatch Bands Compatible with Apple Watch Band 38mm 40mm 41mm for Women Men, Waterproof Soft Silicone Sport Band Replacement Compatible with Apple Watch Series 7 6 5 4 3 2 1 SE Band
+  - idx=38935, score=0.0547, title=SENON Shockproof Anti-Scratch Anti-Fingerprint Protective Case Cover for Samsung Galaxy J7 Aero/J7 Star/J7 Top/J7 Crown/J7 Aura/J7 Refine/J7 Eon/J7 2018,Blue
+  - idx=35405, score=0.0469, title=QIBOX Bands Compatible with Versa, Woven Fabric Wrist Strap Watch Special Edition Replacement Bands Classic Square Stainless Steel Buckle Compatible with Versa Smart Watch
+  - idx=23293, score=0.0312, title=Generic New 3D Bling Diamond Love Heart Hard Cover Skin Case For Samsung Galaxy S3 i9300-white
 
-Query item idx 32098: Small 3 1/8 Inch Square Envelopes - 50 Pk (White)
+Query item idx 97343: Galaxy J3/J3V/Sol/Sky Case, Amp Prime Case, Express Prime Case With TJS Tempered Glass Screen Protector, Ultra Thin Hybrid Shockproof Drop Protection Impact Rugged Case Armor Cover (Black/Blue)
 Top 5 similar products:
-  - idx=32096, score=0.1016, title=2021-2022 Planner - Weekly & Monthly Planner 2021-2022 with Marked Tabs, 8.46" x 6.37", Jul 2021 - Jun 2022, Twin-Wire Binding, Thick Paper, Back Pocket, Elastic Closure, Beautiful Pattern
-  - idx=45138, score=0.0781, title=U.S. Art Supply 3-Piece Water Coloring Brush Pen Set of 3 (Sizes - 01 Fine, 02 Medium, 03 Broad) - Refillable, Watercolor, Calligraphy, Painting
-  - idx=26093, score=0.0703, title=Boxes Fast Small Business Packaging, Shipping Box Bulk | Cardboard, Gift, Storage, Small Corrugated Boxes, 6x6x3 663
-  - idx=33621, score=0.0703, title=Victor EZ12SBL 12" Easy Read Ruler, No-Glare Straight Edge, Labeled in MM, CM & in (1/2", 1/4", 1/8", 1/16") Stainless Steel, Pink
-  - idx=16928, score=0.0547, title=NobleWorks - Discontinued Card -50 Crystal Clear Plastic Boxes
+  - idx=49375, score=0.0469, title=Zizo Bolt Cover for LG G Stylo LS770 Case [.33m 9H Tempered Glass Screen Protector] Included [Military Grade] Armor Case Kickstand Holster Clip - Gray / Black
 
-Query item idx 29256: Elmeplh Nano Double Sided Adhesive Tape Heavy Duty - Multipurpose Transparent Poster Tape, Reusable Strong Sticky Tape for Carpet Mats/Paste Items/Photos Frames/Craft Wall Mounting(9.84FT)
+Query item idx 36077: OKRAY 10 Pack 1ft Short Micro USB 2.0 A Male to Micro B Cable Micro USB to USB Cable Charging Charger for Android, Samsung, HTC, Motorola, Nokia, LG, HP, Sony, Blackberry, Power Bank, Nexus and More
 Top 5 similar products:
-  - idx=45103, score=0.1172, title=2 Pack Mini Clipboard, Small Clipboards with Pen Holder, Leather Black Clipboard for Nursing Classroom, Smooth Writing Low Magnetic Profile Clip Boards for Kids Women Teacher Office, 8.6" x 4.7"
-  - idx=35431, score=0.1094, title=Magnetic Tape, Flexible Magnet Tape Strips Roll (1/2'' Wide x 18 ft Long) with Strong 3M Adhesive Backing, Perfect for DIY, Art Projects, whiteboards & Fridge Organization
-  - idx=75695, score=0.1094, title=180 Pieces Metal Rim Tags Key Tags Round Paper Tags with Metal Rings for Car Keys and Door Keys,White
-  - idx=34468, score=0.0938, title=Woolsche Paper Shredder, 18-Sheet Cross Cut with 7.93-Gallon Pull Out Basket, P-4 Security Level, 3-Mode Design Shred Paper and Credit Card, Durable&Fast with Auto Jam Proof System Shredder for Office
-  - idx=73103, score=0.0938, title=Wisifayardin 2pcs Cardinal Bird Statue for Home Decor - Handcrafted Red Cardinal Figurine for Bird Lovers - Red Cardinal Bird Sculpture for Collectors
+  - idx=79432, score=0.0938, title=Sethruki Portable Charger 20000mAh, Smallest & Lightest Dual USB External Battery,Ultra-Compact Fast-Charging-Technology Power Bank Compatible for iPhone,Samsung Galaxy and More
+  - idx=79433, score=0.0781, title=iCoverCase for Xiaomi Mi 8 Lite Case,[Invisible Matal Ring Bracket][Magnetic Support] Shockproof Anti-Scratch Ultra-Slim Protective Cover Case Kickstand (Red+Black)
 
-Query item idx 18289: Levenger Circa Discs - Set of 22, 2-Inch - Black (ADS5065)
+Query item idx 32123: LG Electronics V30+ Factory Unlocked Phone, 128GB, 6", Black (U.S. Warranty)
 Top 5 similar products:
-  - idx=8810, score=0.1016, title=Levenger Translucent Circa Covers, Letter - Set of 2 (ADS4285 LTR)
-  - idx=35379, score=0.0781, title=Acrylic File Organizer 4 Section Holder, Laptop, Folder, Palette Makeup, Office, Letter, Notebook, Electronics, Purse, Book, Clear Lucite Paper Sorter, 9-Inch Wide x 7-Inch Deep x 7-Inch High
-  - idx=35061, score=0.0781, title=LUXPaper A2 Invitation Envelopes | Peel & Press | 4 3/8" x 5 3/4" | Midnight Black | 80lb. Text | 50 Qty
-  - idx=76122, score=0.0781, title=Staples Arc Notebook Project Planner Filler Paper, Letter-sized, White, 50 Sheets
-  - idx=46316, score=0.0703, title=Vertical Deluxe Durable PU Leather ID Badge Holder with 1 ID Window and 1 Card Slot and Alligator Clip (Brown)
+  - idx=94310, score=0.1094, title=RVOUSA_Charging Port Charger Dock Connector Flex Cable for Samsung Galaxy Mega 6.3 SGH-i527
+  - idx=54854, score=0.1016, title=SUPCASE Lg v30 case, Black
+  - idx=95456, score=0.0938, title=iXCC Crystal Series Apple iPhone 6/6s Protective Slim Cover Case with Transparent Clear PC Hard Back Plate and Soft TPU Gel Bumper - Clear
 
-Query item idx 13434: Mintra Office Steno Book - (BRIGHTS - Purp/Wht/Teal/Orange) - 6inx9in, 100 Sheets, 8 Pads/Pack, Narrow Ruled - Poly Cover, Notebook for writing notes in school, university, college, work, office
+Query item idx 29279: ICARERCASE iPhone 7 Plus, iPhone 8 Plus Wallet Case, Premium PU Leather Folio Flip Cover with Kickstand and Credit Slots for Apple iPhone 7 Plus/8 Plus 5.5 Inch (Brown)
 Top 5 similar products:
-  - idx=69969, score=0.0156, title=Scotch Mounting, Fastening & Surface Protection Scotch Removable Poster Tape, 3/4 x 150 Inches, 3 Pack, 109-3
-  - idx=36175, score=0.0156, title=2 Pack Divider Sticky Notes Memo Set for Binders, Notebooks, Planners w/ Index Tabs, Flags (Multicolored)
+  - idx=33221, score=0.0625, title=Bonitec for iPhone 11 Case 3D Glitter Sparkle Bling Case for Women Luxury Shiny Crystal Rhinestone Diamond Bumper Clear Rose Gems Protective Case Cover
+  - idx=61272, score=0.0625, title=Yoption Transparent Plastic 3D Glitter Quicksand and Star Liquid Case for Apple iPhone 5 5S SE
+  - idx=98056, score=0.0469, title=Snakehive Samsung Galaxy S23 Ultra Leather Case | Genuine Leather Wallet Phone Case with Card Holder | Flip Folio Case/Cover with Stand | Compatible with Samsung Galaxy S23 Ultra | (Navy)
+  - idx=110474, score=0.0391, title=ZENEE Battery Case for iPhone 8 Plus/7 Plus/6s Plus/6 Plus, 7000mAh Slim Portable Protective Charger Case Extended Battery Charging Case for iPhone 8 Plus/7 Plus/6s Plus/6 Plus (5.5 inch), Black
+  - idx=28869, score=0.0391, title=VANMASS [Upgraded] Phone Holder Car [Anti-Slip Soft Silicone & Powerful Suction] Dashboard Windshield Universal GPS Vehicle Mount, Compatible with iPhone 14 13 12 11 Pro Max &Truck/SUV (Pink)
 
-Query item idx 71483: Tintris Journal Cover for 5 x 8 A5 Moleskine LEUCHTTURM Notebooks Journals Planners Sketchbooks Legal pads with Pen Holder Elastic Band, Water Resistant Notebook Cover, Classy Waxed Canvas, Olive
+Query item idx 18300: i-Blason Cosmo Wallet Slim Designer Wallet Case for Apple iPhone 11 (2019), Marble, 6.1"
 Top 5 similar products:
-  - idx=61851, score=0.0781, title=3-Tier Rolling Cart with Wheels, G-Hemobel Metal Utility Cart with 3 Hanging Cups and 2 Lockable Wheels, Organizer Cart with Multi-Functional Storage, White
-  - idx=50530, score=0.0625, title=Nicpro 0.5 mm Art Mechanical Pencils Set in Storage Case, 3 PCS Metal Drafting Pencil Lead Pencil with 6 Tube HB Lead Refills, 3 Erasers, 9 PCS Eraser Refills for Artist Writing, Drawing, Sketching
-  - idx=70667, score=0.0547, title=Ericter Sticky Tabs 1800 Pieces Transparent Sticky Notes, Highlighter Strips for Bookmarks, Writable and Repositionable Index Annotation Tabs
-  - idx=49551, score=0.0547, title=137 Toner Cartridge 2 Packs Compatible for Canon 137 Black Toner Cartridge, use for Canon ImageCLASS MF232w, MF242dw, MF212w, MF216n, MF217w, MF244dw, MF247dw, MF249dw, MF227dw, MF229dw Laser Printers
-  - idx=51476, score=0.0547, title=diodrio Journal Notebook Cover for Travel 5.5 x 8.25 A5 Moleskine LEUCHTTURM 1917 Journal Notebook Planner Sketchbook Legal Pad, refillable, Water Resistant, Elastic Band, Inner Pockets, Black
+  - idx=71280, score=0.0625, title=iPhone 6S Plus Case,iPhone 6 Plus Case Pineapple,Fingic Ultra Slim Floral Pineapple Design Case Hard PC Soft Rubber Anti-Scratch Protective Case Cover for iPhone 6 /6s Plus(5.5"),Floral Pineapple/Pink
+  - idx=38518, score=0.0547, title=Compatible with Watch Band 38mm 40mm 41mm 42mm 44mm 45mm iWatch Bands Series 7 6 SE 5 4 3, FresherAcc Women Girls Bling Crystal Butterfly Replacement Strap Metal Cuff Jewelry Wristband
+  - idx=75935, score=0.0312, title=JuQBanke Compatible for Apple Watch Band 42mm 44mm, Jewelry Fashion Stretch Crystal Pearl Bracelet Replacement Womens Strap, Compatible for iWatch Series 5/4/3/2/1(Silver Purple, M/L)
 
-Query item idx 11395: Large Dry Erase Calendar for Wall - Undated 3 Month Wall Calendar, 40" x 28"(Vertical), Erasable Laminated Calendar Whiteboard with 5 Markers ＆ 8 Stickers, Monthly Wall Calendar for Home, Office and Classroom - 3 Month Purple
+Query item idx 96676: BLU Advance A6 Case, BLU Studio Mega S610P Case, BLU Studio XL 2 S0270UU Case, Premium Rugged Heavy Duty Drop Proof Case with Kickstand for BLU Studio XL 2 S0270UU-RED
 Top 5 similar products:
-  - idx=50184, score=0.0312, title=Canon LBP113w imageCLASS (2207C004) Wireless, 23 Pages Per Minute, Black & Canon Genuine Toner, Cartridge 047 Black (2164C001), 1 Pack imageCLASS LBP113w, MF113w Laser Printer
-  - idx=7666, score=0.0312, title=Mr. Pen Retractable Mechanical Eraser Pen, Pack of 6, Assorted Color
-  - idx=53796, score=0.0312, title=2022 Calendar - Wall Calendar with Floral Monthly Page, JAN 2022 - DEC 2022, 15” x 11.5”, Twin-Wire Binding & Large Blocks, Perfect for School, Office & Home Planning
+  - idx=71616, score=0.1484, title=Asscom 028-061 Universal 2-in-1 Mobile Phone Car Mount Holder for iphone 6, 6plus, 5, 5s, 5c, 4, 4s, Android Samsung Galaxy S5, S4, S3, Note 2 3 4 and all smartphone - Black
+  - idx=76773, score=0.1484, title=Alcatel One Touch Fierce XL/Alcatel OneTouch Flint/Alcatel OneTouch Pixi Glory LTE Case, Starshop [Dual Layers] Kickstand with [Premium Screen Protector] Locking Belt Clip (Black)
+  - idx=75225, score=0.1484, title=Tekcoo Holster Clip for LG K30 / LG Xpression Plus/LG Harmony 2 / Phoenix Plus/LG Premier Pro LTE / K30 Plus, [Hoplite] [Camouflage] Locking Belt Defender Full Body Kickstand Carrying Camo Cover
+  - idx=53262, score=0.0859, title=iPhone 6s Case, Imikoko™ Fashion Luxury Protective Hybrid Beauty Crystal Rhinestone Sparkle Glitter Hard Diamond Case Cover for iPhone 6s/6 (Blue-3 Layer)
 
-Query item idx 77402: Yeahgoshopping Clear Packing Tape Rolls 2" Width x 60 Yards or 110 Yards Thickness 2 Mil Clear Tape Use for Packages Packing, Warehouse, Office, Shool (1 Roll 110 Yards)
+Query item idx 13442: IMBZBK Screen Protector Tempered Glass (4 Pack UV Glass with 4 Pack Camera Lens Protector) for Samsung S23 Ultra Case Friendly Fingerprint Compatible
 Top 5 similar products:
-  - idx=77401, score=0.1328, title=AQG Gel Seat Cushion, Cooling seat Cushion Thick Big Breathable Honeycomb Design Absorbs Pressure Points Seat Cushion with Non-Slip Cover Gel Cushion for Office Chair Home Car seat Cushion (Green)
-  - idx=75020, score=0.1250, title=Jenbode Identity Protection Roller Stamps - Anti Theft Prevention Stamps - Guard Your ID Advanced Confidential Address Blocker（Purple）
-  - idx=77189, score=0.1172, title=Sugarneon LED Neon Open Sign with Adapter,16.5"x 9" Adjustable Brightness Open Sign for Business,Ultra Bright Neon Lights for Stores Restaurants Offices Retails Shops Storefronts Wall Decor
-  - idx=76775, score=0.1016, title=INKCLOUD 275XL Black Ink Cartridges High Capacity Compatible with Canon PG-275 XL PG275 Black (4981C001) for Canon PIXMA TS3522 TS3520 TR4720 Printer, 2Pack
-  - idx=71435, score=0.0938, title=Sweetcrispy Office Ergonomic Computer Headrest and Lumbar Support, High Back Mesh Desk Chair 3D Armrest Retractable Footrest, Black
-
+  (No candidates found)

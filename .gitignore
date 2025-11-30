@@ -4,6 +4,7 @@ data/
 # HPC outputs
 *.err
 *.out
+*.lsf
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

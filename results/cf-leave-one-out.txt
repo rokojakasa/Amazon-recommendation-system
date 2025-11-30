@@ -1,0 +1,15 @@
+Train: 1354262, Val: 223308, Test: 223308
+Number of users: 223308
+Number of products: 77225
+Epoch 1, RMSE = 4.5902
+Epoch 2, RMSE = 4.5901
+Epoch 3, RMSE = 4.5901
+Epoch 4, RMSE = 4.5901
+Epoch 5, RMSE = 4.5901
+Epoch 6, RMSE = 4.5901
+Epoch 7, RMSE = 4.5901
+Epoch 8, RMSE = 4.5901
+Epoch 9, RMSE = 4.5901
+Epoch 10, RMSE = 4.5901
+Validation Recall@10: 0.0103
+Test Recall@10: 0.0094

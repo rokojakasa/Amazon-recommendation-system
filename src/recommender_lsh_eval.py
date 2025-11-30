@@ -8,7 +8,7 @@ import pandas as pd
 import mmh3
 import numpy as np
 from tqdm import tqdm
-from src.data_loader import load_preprocess_5core
+from src.data_loader import load_preprocess_5core, load_preprocess_split
 
 
 import src.data_loader
@@ -19,7 +19,7 @@ print("ATTRIBUTES:", dir(src.data_loader))
 NUM_HASHES = 128
 NUM_BANDS = 64
 ROWS_PER_BAND = NUM_HASHES // NUM_BANDS
-RATING_THRESHOLD = 3
+RATING_THRESHOLD = 1
 RANDOM_SEED = 42
 
 
@@ -120,23 +120,67 @@ def get_top_k_similar_products(
     top_k = sorted(similarities.items(), key=lambda x: x[1], reverse=True)[:k]
     return top_k
 
+def evaluate_hit_rate_at_k(K, product_signatures, bands, train_df, test_df):
+    hits = 0
+    total = 0
+    
+    train_last_item = (
+    train_df[train_df["rating"] >= RATING_THRESHOLD]
+    .sort_values("timestamp")
+    .groupby("user_idx")
+    .tail(1)
+    .set_index("user_idx")["product_idx"]
+    .to_dict()
+)
+
+
+    for _, row in tqdm(test_df.iterrows(), total=len(test_df), desc="Evaluating Hit Rate@K"):
+        true_item = int(row["product_idx"])
+        user = int(row["user_idx"])
+        
+        user_train = train_df[train_df["user_idx"] == user]
+        
+        if user_train.empty:
+            continue
+        
+        last_item = train_last_item.get(user)
+        if last_item is None:
+        # skip users with no qualifying train interactions
+            continue
+
+        
+        recs = get_top_k_similar_products(last_item, K, product_signatures, bands)
+        
+        rec_items = {pid for pid, _ in recs}
+        
+        if true_item in rec_items:
+            hits += 1
+        
+        total += 1
+        
+    return hits / total if total > 0 else 0.0   
 
 def main():
-    meta_filename = "meta_Cell_Phones_and_Accessories.jsonl.gz"
-    reviews_filename = "Cell_Phones_and_Accessories_5core.csv.gz"
     os.makedirs("results", exist_ok=True)
     t0 = time.time()
-    interaction_df = load_preprocess_5core(meta_filename, reviews_filename)
+    train_df, val_df, test_df = load_preprocess_split()
     print("Loaded meta and reviews in", time.time() - t0, "seconds")
+    
+    print("Train size:", len(train_df))
+    print("Val size:", len(val_df))
+    print("Test size:", len(test_df))
 
     t1 = time.time()
-    item_to_users = build_item_to_users(interaction_df)
+    item_to_users = build_item_to_users(train_df)
     print("Built mappings and item_to_users in", time.time() - t1, "seconds")
     
-    print("Number of rows in interaction_df:", len(interaction_df))
-    interaction_df.head(20)
 
-    idx_to_title = interaction_df.drop_duplicates("product_idx").set_index("product_idx")["title"].to_dict()
+    full_df = pd.concat([train_df, val_df, test_df])
+    
+
+
+    idx_to_title = full_df.drop_duplicates("product_idx").set_index("product_idx")["title"].to_dict()
+
     def get_product_title(pid): return idx_to_title.get(pid, "Unknown Title")
 
     hash_seeds = make_hash_seeds(NUM_HASHES)
@@ -149,78 +193,86 @@ def main():
     bands = build_lsh_bands(product_signatures)
     print("Assigned LSH bands in", time.time() - t3, "seconds")
 
+    print("Number of products in signatures:", len(product_signatures))
+    print("Sample product IDs in signatures:", list(product_signatures.keys())[:10])
+
+    for K in [5, 10, 20]:
+        hr = evaluate_hit_rate_at_k(
+            K, product_signatures, bands, train_df, test_df
+        )
+        print(f"HitRate@{K}: {hr:.4f}")
     # ---- EXAMPLES SECTION ----
     # How many different query items you want examples for
-    NUM_EXAMPLES = 10
-    K = 5  # top-k per query
+    # NUM_EXAMPLES = 10
+    # K = 5  # top-k per query
 
-    # Pick some example product indices that actually have signatures
-    all_items = list(product_signatures.keys())
-    if len(all_items) < NUM_EXAMPLES:
-        example_pids = all_items
-    else:
-        # deterministic sample so it doesn't change every run
-        random.seed(RANDOM_SEED)
-        example_pids = random.sample(all_items, NUM_EXAMPLES)
+    # # Pick some example product indices that actually have signatures
+    # all_items = list(product_signatures.keys())
+    # if len(all_items) < NUM_EXAMPLES:
+    #     example_pids = all_items
+    # else:
+    #     # deterministic sample so it doesn't change every run
+    #     random.seed(RANDOM_SEED)
+    #     example_pids = random.sample(all_items, NUM_EXAMPLES)
 
-    out_lines = []
-    out_lines.append(
-        f"Item–item CF with MinHash+LSH examples "
-        f"(NUM_HASHES={NUM_HASHES}, NUM_BANDS={NUM_BANDS}, K={K})\n\n"
-    )
+    # out_lines = []
+    # out_lines.append(
+    #     f"Item–item CF with MinHash+LSH examples "
+    #     f"(NUM_HASHES={NUM_HASHES}, NUM_BANDS={NUM_BANDS}, K={K})\n\n"
+    # )
 
-    for example_pid in example_pids:
-        query_title = get_product_title(example_pid)
-        header = (
-            f"Query item idx {example_pid}: {query_title}\n"
-            f"Top {K} similar products:\n"
-        )
-        print("\n" + header)
-        out_lines.append(header)
+    # for example_pid in example_pids:
+    #     query_title = get_product_title(example_pid)
+    #     header = (
+    #         f"Query item idx {example_pid}: {query_title}\n"
+    #         f"Top {K} similar products:\n"
+    #     )
+    #     print("\n" + header)
+    #     out_lines.append(header)
 
-        top_k = get_top_k_similar_products(
-            example_pid, K, product_signatures, bands
-        )
+    #     top_k = get_top_k_similar_products(
+    #         example_pid, K, product_signatures, bands
+    #     )
 
-        if not top_k:
-            line = "  (No candidates found)\n"
-            print(line)
-            out_lines.append(line)
-            continue
+    #     if not top_k:
+    #         line = "  (No candidates found)\n"
+    #         print(line)
+    #         out_lines.append(line)
+    #         continue
 
-        for pid, score in top_k:
-            line = (
-                f"  - idx={pid}, score={score:.4f}, "
-                f"title={get_product_title(pid)}\n"
-            )
-            print(line, end="")
-            out_lines.append(line)
+    #     for pid, score in top_k:
+    #         line = (
+    #             f"  - idx={pid}, score={score:.4f}, "
+    #             f"title={get_product_title(pid)}\n"
+    #         )
+    #         print(line, end="")
+    #         out_lines.append(line)
 
-        out_lines.append("\n")
+    #     out_lines.append("\n")
 
-    # Save all examples to file
-    os.makedirs("results", exist_ok=True)
-    with open("results/lsh_examples.txt", "w", encoding="utf-8") as f:
-        f.writelines(out_lines)
+    # # Save all examples to file
+    # os.makedirs("results", exist_ok=True)
+    # with open("results/lsh_examples.txt", "w", encoding="utf-8") as f:
+    #     f.writelines(out_lines)
 
-    print("\nSaved examples to results/lsh_examples.txt")
+    # print("\nSaved examples to results/lsh_examples.txt")
 
 
-    print("\nSaved examples to results/lsh_examples.txt")
+    # print("\nSaved examples to results/lsh_examples.txt")
 
-        # ---- SAVE TRAINED LSH DATA ----
-    import pickle
+    #     # ---- SAVE TRAINED LSH DATA ----
+    # import pickle
 
-    with open("results/lsh_signatures.pkl", "wb") as f:
-        pickle.dump(product_signatures, f)
+    # with open("results/lsh_signatures.pkl", "wb") as f:
+    #     pickle.dump(product_signatures, f)
 
-    with open("results/lsh_bands.pkl", "wb") as f:
-        pickle.dump(bands, f)
+    # with open("results/lsh_bands.pkl", "wb") as f:
+    #     pickle.dump(bands, f)
 
-    with open("results/lsh_idx_to_title.pkl", "wb") as f:
-        pickle.dump(idx_to_title, f)
+    # with open("results/lsh_idx_to_title.pkl", "wb") as f:
+    #     pickle.dump(idx_to_title, f)
 
-    print("Saved LSH data to results/*.pkl")
+    # print("Saved LSH data to results/*.pkl")
 
 
 
