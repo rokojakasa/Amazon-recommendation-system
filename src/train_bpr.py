@@ -100,35 +100,34 @@ def load_checkpoint(model, optimizer=None, path=CHECKPOINT_FILE, device='cpu'):
         print(f"No checkpoint found at {path}, starting fresh training.")
         return 0
 
-def train_bpr_checkpoint(emb_dim=64, batch_size=4096, lr=1e-3, l2_reg=1e-5, epochs=30, device=None, eval_k=10):
+def train_bpr(
+    train_df,
+    n_users,
+    n_items,
+    emb_dim=64,
+    batch_size=4096,
+    lr=1e-3,
+    l2_reg=1e-5,
+    epochs=30,
+    device=None,
+    checkpoint_path=CHECKPOINT_FILE,
+):
+    """
+    Train a BPR model on train_df only.
+    """
     if device is None:
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("Using device:", device)
 
-    train_df, val_df, test_df = load_preprocess_split()
-
-    # Users: same as train only
-    n_users = int(train_df['user_idx'].max() + 1)
-
-    # Items: cover all items appearing in train, val, and test
-    all_items = pd.concat([
-        train_df['product_idx'],
-        val_df['product_idx'],
-        test_df['product_idx']
-    ])
-    n_items = int(all_items.max() + 1)
-
-
-    item_to_title = train_df.drop_duplicates('product_idx').set_index('product_idx')['title'].to_dict()
-
     train_dataset = BPRDataset(train_df, n_items)
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, num_workers=2, pin_memory=True)
+    train_loader = DataLoader(
+        train_dataset, batch_size=batch_size, shuffle=True, num_workers=2, pin_memory=True
+    )
 
     model = BPRMatrixFactorization(n_users, n_items, emb_dim).to(device)
-    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=l2_reg)
 
-    # Load checkpoint if available
-    start_epoch = load_checkpoint(model, optimizer, device=device)
+    start_epoch = load_checkpoint(model, optimizer, path=checkpoint_path, device=device)
 
     for epoch in range(start_epoch, epochs):
         model.train()
@@ -143,12 +142,6 @@ def train_bpr_checkpoint(emb_dim=64, batch_size=4096, lr=1e-3, l2_reg=1e-5, epoc
             loss_vals = -torch.log(torch.sigmoid(pos_scores - neg_scores) + 1e-8)
             loss = loss_vals.mean()
 
-            if l2_reg > 0:
-                l2 = (model.user_factors(users).norm(2).pow(2) +
-                      model.item_factors(pos_items).norm(2).pow(2) +
-                      model.item_factors(neg_items).norm(2).pow(2)) / users.size(0)
-                loss += l2_reg * l2
-
             optimizer.zero_grad()
             loss.backward()
             torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=5.0)
@@ -158,41 +151,80 @@ def train_bpr_checkpoint(emb_dim=64, batch_size=4096, lr=1e-3, l2_reg=1e-5, epoc
 
         t1 = time.time()
         avg_loss = epoch_loss / len(train_dataset)
-        val_recall = recall_at_k(model, val_df, train_df, n_items, k=eval_k, device=device)
         print(f"Epoch {epoch+1}/{epochs} — BPR-loss: {avg_loss:.6f} — time: {t1-t0:.1f}s")
-        print(f"  Val Recall@{eval_k}: {val_recall:.4f}")
 
-        # Save checkpoint each epoch
-        save_checkpoint(model, optimizer, epoch)
+        save_checkpoint(model, optimizer, epoch, path=checkpoint_path)
 
-    test_recall = recall_at_k(model, test_df, train_df, n_items, k=eval_k, device=device)
-    print(f"Final Test Recall@{eval_k}: {test_recall:.4f}")
+    return model
 
-    # sample recommendations
-    sample_users = test_df['user_idx'].unique()[:5]
-    print("\nSample recommendations (top-10 titles) and last 5 purchases:")
+def sample_recommendations(
+    model,
+    train_df,
+    item_to_title,
+    users,
+    n_last=5,
+    k=10,
+    n_sample=5,
+    device='cpu'
+):
+    """
+    Sample users and print last n_last items + top-k recommendations.
+    """
+    sample_users = np.random.choice(users, size=min(n_sample, len(users)), replace=False)
+    print("\nSample recommendations (top-{} titles) and last {} purchases:".format(k, n_last))
+
     for u in sample_users:
-        # last 5 purchased items by this user (from training)
-        user_train_items = train_df[train_df['user_idx'] == u].sort_values('timestamp', ascending=False)['product_idx'].values
-        last5_titles = [item_to_title.get(int(i), str(i)) for i in user_train_items[:5]]
+        # last n_last purchased items
+        user_train_items = (
+            train_df[train_df['user_idx'] == u]
+            .sort_values('timestamp', ascending=False)['product_idx']
+            .values
+        )
+        last_titles = [item_to_title.get(int(i), str(i)) for i in user_train_items[:n_last]]
 
-        # top-10 recommendations (excluding training items)
+        # top-k recommendations
         seen_train = set(train_df[train_df['user_idx'] == u]['product_idx'].values)
-        topk = recommend_topk(model, u, seen_train, n_items, k=10, device=device)
+        topk = recommend_topk(model, u, seen_train, n_items=item_to_title.__len__(), k=k, device=device)
         topk_titles = [item_to_title.get(int(i), str(i)) for i in topk]
 
-        print(f"User {u} | Last 5 purchases: {last5_titles} | Recommendations: {topk_titles}")
+        print(f"User {u} | Last {n_last} purchases: {last_titles} | Recommendations: {topk_titles}")
 
-
-    return model, train_df, val_df, test_df, item_to_title
 
 if __name__ == "__main__":
-    train_bpr_checkpoint(
+    train_df, val_df, test_df = load_preprocess_split()
+
+    # Users/items
+    n_users = int(train_df['user_idx'].max() + 1)
+    all_items = pd.concat([train_df['product_idx'], val_df['product_idx'], test_df['product_idx']])
+    n_items = int(all_items.max() + 1)
+
+    item_to_title = train_df.drop_duplicates('product_idx').set_index('product_idx')['title'].to_dict()
+
+    # Train model
+    model = train_bpr(
+        train_df=train_df,
+        n_users=n_users,
+        n_items=n_items,
         emb_dim=128,
         batch_size=4096,
         lr=1e-3,
         l2_reg=1e-5,
         epochs=30,
-        device=None,
-        eval_k=50
+        device=None
+    )
+
+    # Evaluate test recall
+    test_recall = recall_at_k(model, test_df, train_df, n_items, k=50, device=None)
+    print(f"\nFinal Test Recall@50: {test_recall:.4f}")
+
+    # Sample recommendations
+    sample_recommendations(
+        model=model,
+        train_df=train_df,
+        item_to_title=item_to_title,
+        users=test_df['user_idx'].unique(),
+        n_last=5,
+        k=10,
+        n_sample=5,
+        device=None
     )
