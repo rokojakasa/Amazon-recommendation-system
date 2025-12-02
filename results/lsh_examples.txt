@@ -1,63 +1,54 @@
 Item–item CF with MinHash+LSH examples (NUM_HASHES=128, NUM_BANDS=64, K=5)
 
-Query item idx 83927: UrSpeedtekLive J7 Case, Galaxy J7 Wallet Case, Premium PU Leather Flip Wallet Case Cover w/Card Slots & Kickstand Compatible with Samsung Galaxy J7 2015 -Tree
+Query item idx 335426: Ciglow Bluetooth Headphone, Wireless Hands Free Ear Hook Headset Painless Bone Conduction Earphone Waterproof Ergonomic Design Headset(red)
 Top 5 similar products:
-  - idx=55746, score=0.1094, title=CaseHaven Galaxy J7 Case, Glitter Crystal Heart Floral Series - Slim Luxury Bling Rhinestone Clear TPU Case with Ring Stand for Samsung Galaxy J7 J700 (2015) - Rose Gold
-  - idx=64406, score=0.0781, title=J7 Cases,Galaxy J7 Case 2015 Clear with Screen Protector,J700M Case(Not Fit J710 2016) AnoKe Glitter TPU Thin Slim Fit Protective Cell Phone Cover for Girls Women Men Kids Galaxy J700 TM Clear
-  - idx=78304, score=0.0625, title=TJS Samsung Galaxy J3 Emerge/J3 Prime/Amp Prime 2/Express Prime 2/Sol 2/J3 Mission/J3 Luna Pro/J3 Eclipse Case, With [Tempered Glass Screen Protector] Hybrid Shockproof Phone Case Armor (Stardust)
+  - idx=220705, score=0.1875, title=Accering Wireless Bluetooth Headphones, Best Running/Sports Earphones, IPX7 Sweatproof Bass Stereo in Ear Headset with Mic for iPhone, Gym, Workout
+  - idx=128183, score=0.1094, title=Wireless Bluetooth Mouse for Laptop,Led Slim Dual Mode Mouse(Bluetooth 5.1+ USB)Silent Rechargeable Mouse with Type C Adapter,3 Adjustable DPI Computer Mice for MacBook/iPad OS13 Above(Purple)
+  - idx=279286, score=0.0938, title=Meifox Lightning Earbuds, iPhone Wired Headphones with Microphone & Volume Control, MFi Certified Noise Isolation Earphones, Headphones for iPhone 13/12/11 Pro Max X XS XR 8P 7P (Black)
+  - idx=188177, score=0.0703, title=Protective Case for TCL Roku TV RC280 Remote, Silicone Cover Shock Proof Remote Controller Skin, Cute Cat Ear Shape Anti Slip Universal Replacement Sleeve(Glow Blue)
 
-Query item idx 14600: Snowfox Samsung Galaxy S8+ Plus Case, Full-Body Protection Rugged Clear Bumper Case with Built-in Screen Protector for Samsung Galaxy S8+ Plus 2017 Release
+Query item idx 58371: Panlong 2 Port AV RCA Switch 2 in 1 Out Composite Video L/R Audio Switcher Selector Box for DVD Player, Sega Genesis, SNES, N64, PS2/3 Game Consoles
 Top 5 similar products:
-  - idx=56677, score=0.0625, title=JETech Case for Samsung Galaxy S4, Protective Cover, Grey
-  - idx=29210, score=0.0547, title=tekSonic S6 Case, Samsung Galaxy S6 Case (Gold) Armor Series [Card Slide Slot][Drop Protection][Heavy Duty][Wallet] Full Cover Protection Tough Case for Samsung Galaxy S6 (Golden)
-  - idx=28631, score=0.0391, title=Samsung Galaxy S20 FE Case/S20 FE 5G X-level Slim Fit Ultra-Thin Soft TPU Super S20 FE Phone Cover [Guardian Series] Matte Finish Coating Case for Samsung S20 FE/ S20 FE 5G -Gold
-  - idx=66905, score=0.0391, title=Galaxy S8 Plus Case, Clear Galaxy S8 Plus Case, MOSNOVO Cherry Blossom Floral Printed Flower Clear Design Plastic Hard Slim Case with TPU Bumper Case Cover for Samsung Galaxy S8 Plus
-  - idx=9602, score=0.0312, title=i-Blason Galaxy S8+ Plus Case, Scratch Resistant Clear Halo Series Samsung Galaxy S8+ Plus Hybrid Bumper Case Cover 2017 Release (Clear)
-
-Query item idx 3278: Micro USB Cable, HI-CABLE Fast+ 3 pack 6ft Braided Long Charging Cord For Samsung Galaxy S7 S6 Edge Plus, Note 4/ 5,S4 S5 Active, Tab A S/ S2 Pro, PS3/ 4, Android Phone Gold-Plated (Silver)
+  (No candidates found)
+Query item idx 13112: IVEOPPE Keyboard Case for Galaxy Tab A8 10.5 Inch SM-X200/X205/X207 2022, Detachable Wireless Keyboard,with 032 Backlit Keyboard 7 Colors Magnetically Bluetooth Keyboard,Black
 Top 5 similar products:
-  - idx=35406, score=0.0547, title=kate spade new york Protective Hardshell Case for Samsung Galaxy S9 - Multi Scatter Dot Gold / Clear with Stones
-  - idx=35407, score=0.0547, title=YIIYOUNG 10 Pack iWatch Bands Compatible with Apple Watch Band 38mm 40mm 41mm for Women Men, Waterproof Soft Silicone Sport Band Replacement Compatible with Apple Watch Series 7 6 5 4 3 2 1 SE Band
-  - idx=38935, score=0.0547, title=SENON Shockproof Anti-Scratch Anti-Fingerprint Protective Case Cover for Samsung Galaxy J7 Aero/J7 Star/J7 Top/J7 Crown/J7 Aura/J7 Refine/J7 Eon/J7 2018,Blue
-  - idx=35405, score=0.0469, title=QIBOX Bands Compatible with Versa, Woven Fabric Wrist Strap Watch Special Edition Replacement Bands Classic Square Stainless Steel Buckle Compatible with Versa Smart Watch
-  - idx=23293, score=0.0312, title=Generic New 3D Bling Diamond Love Heart Hard Cover Skin Case For Samsung Galaxy S3 i9300-white
+  - idx=214959, score=0.0391, title=Bluetooth Speaker, Portable Speaker Bluetooth 5.0 with Loud Stereo Sound Wireless Speaker Waterproof IP5 Outdoor Speakers, 15H Playtime, Lights for Bike, Camping, Built-in Mic, Party, Beach, Travel
+  - idx=185740, score=0.0312, title=Pyle PPSP18 Bluetooth Pillow Speaker, Rechargeable Portable Sleep Therapy Noise Sound Machine with Soothing All-Natural Sounds Remote Control | AUX Input | 1 GB Built in Memory
 
-Query item idx 97343: Galaxy J3/J3V/Sol/Sky Case, Amp Prime Case, Express Prime Case With TJS Tempered Glass Screen Protector, Ultra Thin Hybrid Shockproof Drop Protection Impact Rugged Case Armor Cover (Black/Blue)
+Query item idx 144222: RUMBLE 24/7 Night Running Gear Shoe Lights- Flashing LED Reflective Gear for Runners, Joggers, Bikers, Kids & Pets (One Pair) Black
 Top 5 similar products:
-  - idx=49375, score=0.0469, title=Zizo Bolt Cover for LG G Stylo LS770 Case [.33m 9H Tempered Glass Screen Protector] Included [Military Grade] Armor Case Kickstand Holster Clip - Gray / Black
+  - idx=343322, score=0.0625, title=RCA AH740F Power and Sync Cable for iPod/iPhone
 
-Query item idx 36077: OKRAY 10 Pack 1ft Short Micro USB 2.0 A Male to Micro B Cable Micro USB to USB Cable Charging Charger for Android, Samsung, HTC, Motorola, Nokia, LG, HP, Sony, Blackberry, Power Bank, Nexus and More
+Query item idx 128414: 200ft Black Indoor/Outdoor RG-6 Coax Cable 75 Ohm UV Resistance (CATV, Satellite TV, or Broadband Internet) with Quad Shield Compression COAXIAL CONNECTORS
 Top 5 similar products:
-  - idx=79432, score=0.0938, title=Sethruki Portable Charger 20000mAh, Smallest & Lightest Dual USB External Battery,Ultra-Compact Fast-Charging-Technology Power Bank Compatible for iPhone,Samsung Galaxy and More
-  - idx=79433, score=0.0781, title=iCoverCase for Xiaomi Mi 8 Lite Case,[Invisible Matal Ring Bracket][Magnetic Support] Shockproof Anti-Scratch Ultra-Slim Protective Cover Case Kickstand (Red+Black)
+  - idx=335200, score=0.1328, title=Master Cables Black Garmin Compatible Replacement - Micro USB Cable – High Quality – Connects with PC - Helps to Update and Transfer Data – Plug and Play - 6 ft. Long Wire
+  - idx=165215, score=0.1172, title=Earphones Plus brand 300-B-6BLK-6CLR-XS Replacement earphone cushions, replacement earbud tips, 12 pairs size extra small + 1 bonus memory foam pair, black and clear
+  - idx=193577, score=0.1094, title=PCT 2-Port Bi-Directional Cable TV, OTA, Satellite HDTV Amplifier Splitter Signal Booster with Passive Return And Coax Cable - cableTVamps
+  - idx=145613, score=0.1094, title=TDK Blu-ray Disc 10 Pack - 50 GB 4X Speed BD-R DL - Printable discs
+  - idx=148924, score=0.0859, title=6.6FT USB C to Lightning Cable 4Pack, 【Apple MFi Certified】 iPhone Fast Charger Cable, USB-C to Lightning Charging Cord for iPhone 13/13 Pro/13 Pro Max/ 12 Mini/12/12 Pro/11/11 Pro/AirPods
 
-Query item idx 32123: LG Electronics V30+ Factory Unlocked Phone, 128GB, 6", Black (U.S. Warranty)
+Query item idx 117040: AgoKud Adjustable Laptop Stand for Desk, Portable Laptop Riser for Laptops 8-17", with Heat-Vent, Supports Up to 44 Lbs Laptop Holder, Compatible with MacBook, Air, Pro, Dell XPS, Samsung
 Top 5 similar products:
-  - idx=94310, score=0.1094, title=RVOUSA_Charging Port Charger Dock Connector Flex Cable for Samsung Galaxy Mega 6.3 SGH-i527
-  - idx=54854, score=0.1016, title=SUPCASE Lg v30 case, Black
-  - idx=95456, score=0.0938, title=iXCC Crystal Series Apple iPhone 6/6s Protective Slim Cover Case with Transparent Clear PC Hard Back Plate and Soft TPU Gel Bumper - Clear
+  - idx=126608, score=0.1250, title=for Lenovo Tab 2 10.1 A10-70F A10-70LC Case, Ultra Lightweight Smart Slim Shell Stand Cover Leather Case for Tab 10 TB-X103F, Tab 3 10.1 TB3-X70F X70M X70L 10.1" (Purple)
+  - idx=234561, score=0.0938, title=MoKo Case Compatible with Lenovo Tab P11 Plus Case 2021(TB-616F)/Tab P11 2020 11 inch (TB-J607F TB-J606X TB-J606F), Origami Standing Shell Cover Case with Multi Angle Magnetic TPU Back Cover, Black
+  - idx=321926, score=0.0703, title=WONNIE Laptop Stand Holder, Ergonomic Aluminum Computer Stand for Desk, Adjustable Laptop Riser with Heat-Vent, Multi-Angle Lapdesks Compatible with MacBook Air/Pro, Dell, HP, Lenov
+  - idx=165423, score=0.0469, title=5pcs DIY Pillow Speaker, New 3.5mm Mini Stereo Speaker for MP3 Phone Portable CD
 
-Query item idx 29279: ICARERCASE iPhone 7 Plus, iPhone 8 Plus Wallet Case, Premium PU Leather Folio Flip Cover with Kickstand and Credit Slots for Apple iPhone 7 Plus/8 Plus 5.5 Inch (Brown)
+Query item idx 73164: Neewer® 36x36 inch/90x90 cm Photo Studio Shooting Tent Light Cube Diffusion Soft Box Kit with 4 Colors Backdrops (Red Dark Blue Black White) for Photography
 Top 5 similar products:
-  - idx=33221, score=0.0625, title=Bonitec for iPhone 11 Case 3D Glitter Sparkle Bling Case for Women Luxury Shiny Crystal Rhinestone Diamond Bumper Clear Rose Gems Protective Case Cover
-  - idx=61272, score=0.0625, title=Yoption Transparent Plastic 3D Glitter Quicksand and Star Liquid Case for Apple iPhone 5 5S SE
-  - idx=98056, score=0.0469, title=Snakehive Samsung Galaxy S23 Ultra Leather Case | Genuine Leather Wallet Phone Case with Card Holder | Flip Folio Case/Cover with Stand | Compatible with Samsung Galaxy S23 Ultra | (Navy)
-  - idx=110474, score=0.0391, title=ZENEE Battery Case for iPhone 8 Plus/7 Plus/6s Plus/6 Plus, 7000mAh Slim Portable Protective Charger Case Extended Battery Charging Case for iPhone 8 Plus/7 Plus/6s Plus/6 Plus (5.5 inch), Black
-  - idx=28869, score=0.0391, title=VANMASS [Upgraded] Phone Holder Car [Anti-Slip Soft Silicone & Powerful Suction] Dashboard Windshield Universal GPS Vehicle Mount, Compatible with iPhone 14 13 12 11 Pro Max &Truck/SUV (Pink)
+  - idx=43117, score=0.0312, title=Monoprice Cable Tie 4 inch 18LBS, 100pcs/Pack - Green
+  - idx=174612, score=0.0312, title=RED Slim Compact Protective Travel Digital Camera Carrying Case with Accessory Compartment for Nikon Coolpix L840, L830, L820, L810, P510, S9100 Digital SLR DSLR Camera
+  - idx=79843, score=0.0234, title=Sigma 19mm F2.8 EX DN -Micro 4/3 400963
+  - idx=336869, score=0.0234, title=Venus Laowa 17mm f/1.8 Lens for Micro Four Thirds
+  - idx=79846, score=0.0234, title=Olympus M.Zuiko 40-150mm f/4.0-5.6 Micro ED Digital Zoom Lens
 
-Query item idx 18300: i-Blason Cosmo Wallet Slim Designer Wallet Case for Apple iPhone 11 (2019), Marble, 6.1"
+Query item idx 53736: 2 Pack Samsung Micro-USB 3.0 Data Cable for Galaxy S5 and Note 3 N9000 - Non-Retail Packaging - White
 Top 5 similar products:
-  - idx=71280, score=0.0625, title=iPhone 6S Plus Case,iPhone 6 Plus Case Pineapple,Fingic Ultra Slim Floral Pineapple Design Case Hard PC Soft Rubber Anti-Scratch Protective Case Cover for iPhone 6 /6s Plus(5.5"),Floral Pineapple/Pink
-  - idx=38518, score=0.0547, title=Compatible with Watch Band 38mm 40mm 41mm 42mm 44mm 45mm iWatch Bands Series 7 6 SE 5 4 3, FresherAcc Women Girls Bling Crystal Butterfly Replacement Strap Metal Cuff Jewelry Wristband
-  - idx=75935, score=0.0312, title=JuQBanke Compatible for Apple Watch Band 42mm 44mm, Jewelry Fashion Stretch Crystal Pearl Bracelet Replacement Womens Strap, Compatible for iWatch Series 5/4/3/2/1(Silver Purple, M/L)
-
-Query item idx 96676: BLU Advance A6 Case, BLU Studio Mega S610P Case, BLU Studio XL 2 S0270UU Case, Premium Rugged Heavy Duty Drop Proof Case with Kickstand for BLU Studio XL 2 S0270UU-RED
+  (No candidates found)
+Query item idx 355003: Infiland Case for Samsung Galaxy Tab A 10.1 Case, Smart 360 Degrees Rotating Stand Case Cover for 2016 Release Samsung Galaxy Tab A 10.1-Inch Tablet (SM-T580 / SM-T585, No S Pen Version)- Purple
 Top 5 similar products:
-  - idx=71616, score=0.1484, title=Asscom 028-061 Universal 2-in-1 Mobile Phone Car Mount Holder for iphone 6, 6plus, 5, 5s, 5c, 4, 4s, Android Samsung Galaxy S5, S4, S3, Note 2 3 4 and all smartphone - Black
-  - idx=76773, score=0.1484, title=Alcatel One Touch Fierce XL/Alcatel OneTouch Flint/Alcatel OneTouch Pixi Glory LTE Case, Starshop [Dual Layers] Kickstand with [Premium Screen Protector] Locking Belt Clip (Black)
-  - idx=75225, score=0.1484, title=Tekcoo Holster Clip for LG K30 / LG Xpression Plus/LG Harmony 2 / Phoenix Plus/LG Premier Pro LTE / K30 Plus, [Hoplite] [Camouflage] Locking Belt Defender Full Body Kickstand Carrying Camo Cover
-  - idx=53262, score=0.0859, title=iPhone 6s Case, Imikoko™ Fashion Luxury Protective Hybrid Beauty Crystal Rhinestone Sparkle Glitter Hard Diamond Case Cover for iPhone 6s/6 (Blue-3 Layer)
+  - idx=333818, score=0.1172, title=Lenovo 2019 Chromebook S330 14" Thin and Light Laptop Computer, MediaTek MTK 8173C 1.70GHz, 4GB RAM, 64GB eMMC, 802.11ac WiFi, Bluetooth 4.1, USB-C, HDMI, Chrome OS
 
-Query item idx 13442: IMBZBK Screen Protector Tempered Glass (4 Pack UV Glass with 4 Pack Camera Lens Protector) for Samsung S23 Ultra Case Friendly Fingerprint Compatible
+Query item idx 286045: Gigabyte GA-970A-DS3 AM3+ AMD 970 SATA 6Gb/s USB 3.0 ATX AMD Motherboard
 Top 5 similar products:
   (No candidates found)

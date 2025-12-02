@@ -102,6 +102,7 @@ def load_checkpoint(model, optimizer=None, path=CHECKPOINT_FILE, device='cpu'):
 
 def train_bpr(
     train_df,
+    val_df,
     n_users,
     n_items,
     emb_dim=64,
@@ -151,11 +152,78 @@ def train_bpr(
 
         t1 = time.time()
         avg_loss = epoch_loss / len(train_dataset)
+        if (epoch + 1) % 10 == 0:
+            recall_at_k_batch(model, val_df, train_df, n_items, k=50, device=device)
         print(f"Epoch {epoch+1}/{epochs} — BPR-loss: {avg_loss:.6f} — time: {t1-t0:.1f}s")
 
         save_checkpoint(model, optimizer, epoch, path=checkpoint_path)
 
     return model
+
+@torch.no_grad()
+def recommend_topk_batch(model, user_indices, seen_items_dict, n_items, k=10, device='cpu', batch_size=512):
+    """
+    Batch recommendation for multiple users at once.
+    
+    user_indices : list or array of user indices to evaluate
+    seen_items_dict : dict mapping user -> set of already seen item indices
+    n_items : total number of items
+    k : number of top items to return
+    batch_size : how many users to process in a batch
+    """
+    model.eval()
+    topk_all = []
+
+    all_items = torch.arange(n_items, device=device)
+
+    for start in range(0, len(user_indices), batch_size):
+        batch_users = user_indices[start:start+batch_size]
+        batch_size_actual = len(batch_users)
+
+        # Create user-item grid for batch scoring
+        user_tensor = torch.tensor(batch_users, device=device).unsqueeze(1).repeat(1, n_items)
+        item_tensor = all_items.unsqueeze(0).repeat(batch_size_actual, 1)
+
+        # Compute scores: (batch_size_actual, n_items)
+        scores = model(user_tensor, item_tensor)
+
+        # Mask seen items
+        for i, u in enumerate(batch_users):
+            seen = seen_items_dict.get(u, set())
+            if seen:
+                scores[i, list(seen)] = -1e9
+
+        # Top-k per user
+        topk_indices = torch.topk(scores, k=k, dim=1).indices.cpu().numpy()
+        topk_all.extend(topk_indices)
+
+    return topk_all
+
+
+def recall_at_k_batch(model, df_eval, train_df, n_items, k=10, device='cpu', batch_size=512):
+    """
+    Batched Recall@K evaluation for multiple users.
+    """
+    model.eval()
+    # Build dict of seen items per user from training
+    train_user_pos = train_df.groupby('user_idx')['product_idx'].apply(set).to_dict()
+    users_eval = df_eval['user_idx'].unique()
+
+    # Get top-k recommendations for all users in batches
+    topk_all = recommend_topk_batch(model, users_eval, train_user_pos, n_items, k=k, device=device, batch_size=batch_size)
+
+    recalls = []
+    user_to_eval_items = df_eval.groupby('user_idx')['product_idx'].apply(list).to_dict()
+
+    for u, topk in zip(users_eval, topk_all):
+        actual_items = user_to_eval_items.get(u, [])
+        if len(actual_items) == 0:
+            continue
+        hits = sum(1 for item in actual_items if item in topk)
+        recalls.append(hits / len(actual_items))
+
+    return float(np.mean(recalls)) if len(recalls) > 0 else 0.0
+
 
 def sample_recommendations(
     model,
@@ -197,12 +265,12 @@ if __name__ == "__main__":
     n_users = int(train_df['user_idx'].max() + 1)
     all_items = pd.concat([train_df['product_idx'], val_df['product_idx'], test_df['product_idx']])
     n_items = int(all_items.max() + 1)
-
+    
     item_to_title = train_df.drop_duplicates('product_idx').set_index('product_idx')['title'].to_dict()
-
     # Train model
     model = train_bpr(
         train_df=train_df,
+        val_df=val_df,
         n_users=n_users,
         n_items=n_items,
         emb_dim=128,

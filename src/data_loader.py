@@ -94,11 +94,11 @@ def build_interaction_df(meta_df: pd.DataFrame, reviews_df: pd.DataFrame):
     
     return interaction_df
 
-def load_preprocess_split():
-    train_path = DATA_DIR / "Office_Products_train.csv.gz"
-    val_path = DATA_DIR / "Office_Products_valid.csv.gz"
-    test_path = DATA_DIR / "Office_Products_test.csv.gz"
-    meta_path = DATA_DIR / "meta_Office_Products.jsonl.gz"
+def load_preprocess_split(train_filename, val_filename, test_filename, meta_filename):
+    train_path = DATA_DIR / train_filename
+    val_path = DATA_DIR / val_filename
+    test_path = DATA_DIR / test_filename
+    meta_path = DATA_DIR / meta_filename
     
     if not train_path.exists():
         raise FileNotFoundError(f"Train file not found: {train_path}")
