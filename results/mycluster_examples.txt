@@ -1,0 +1,92 @@
+K-means Clustering Examples (10 clusters shown, K=100)
+
+Cluster 0:
+  Top terms: black, men, women, keychain, white, blue, size, womens, boot, leather
+  Sample items:
+    - Mento Streamtail
+    - 2 Pcs Oval Cabochon CAB Flatback Semi-precious Gemstone Ring Face 25x18mm (Zebra jasper)
+    - Cadtealir Highlight Stainless steel metal tab lock bucle inlaid with 18k golden chip with full grain nappa leather strap car key chain lanyard clips ring for nissan for men woman accessories
+    - Marc By Marc Jacobs Core Pretty Medium Tate Shoulder Bag (Amethyst)
+    - Result Core Men's Soft Shell II Gilet Red 3XL
+
+Cluster 1:
+  Top terms: dress, long, sleeve, women, maxi, neck, bodycon, dresses, casual, loose
+  Sample items:
+    - Amikadom Christmas Women Dress
+    - Verdusa Women's Short Sleeve Loose Long Maxi Lounge Dress with Pockets Mustard Yellow L
+    - KORSIS Women Long Sleeve Tops T-Shirt Dress Round Neck Casual Loose Dress WineRed S
+    - Verdusa Women's Boat Neck Batwing Sleeve Caftan Baggy Harem Oversized Maxi Dress Black White M
+    - LYANER Women's V Neck Wrap Front Ribbed Knit Long Sleeve Bodycon Mini Short Dress Red# Medium
+
+Cluster 2:
+  Top terms: evening, prom, dresses, dress, bridesmaid, party, gown, formal, wedding, women
+  Sample items:
+    - IVNIS Women's Long Mother of Bride Dress Scoop Neck Formal Bridesmaids Dresses Beaded Wedding Dress Black
+    - Azbro Women's Strapless High Low Sequin Prom Evening Bridesmaid Long Maxi Dress, Orange XXXL
+    - HUUSA Sexy Prom Cocktail Sequin Dresses Party for Womens Formal Wedding Evening Gowns Metallic Elegant Dress Medium Dark Purple
+    - ACEVOG Women's Bow Turtleneck 3 4 Sleeve Solid Bodycon Evening Party Sweater Dress
+    - Women Bridesmaid Dress Maxi Evening Prom Dresses Plus Size 24 Purple CL675-3
+
+Cluster 3:
+  Top terms: dress, summer, beach, maxi, casual, sleeveless, spaghetti, dresses, sundress, floral
+  Sample items:
+    - Women's Summer Boho Dresses Casual V Neck Button Up Flowy Above Knee Dresses Yellow,XL
+    - Bodycon4U Women's Tie Dye Spaghetti Strap Maxi Dress Loose Beach V Neck Sundress Gray
+    - LEANI Women's V Neck Ruffle Adjustable Strappy Summer Beach Long Maxi Dress Pink
+    - Charberry Boho Sexy Women Sleeveless Party Summer Beach Short Mini Casual Dress (L)
+    - JIUMAN Womens Summer Casual Sleeveless Long Dress Floral Party Dress (Blue, S)
+
+Cluster 4:
+  Top terms: pants, yoga, workout, high, waist, leggings, tummy, pockets, control, women
+  Sample items:
+    - Acelitt Womens Casual Pants Capris Drawstring Elastic Waist Comfy Trousers with Pockets Gray X-Large
+    - Lookatool Women's High Waist Fitness Yoga Sport Pants (S, Multicolor 15)
+    - Zeronic High Waist Yoga Pants for Women with Pockets Tummy Control Workout Leggings for Women 4 Way Stretch Yoga Leggings(Purpleblack, Large)
+    - MIROL 7/8 Joggers Sweatpants for Women Drawstring Elastic Waist Loose Fit Athletic Workout Track Pants with Pockets Black
+    - TurvdArorde Active Wear Sets-Women's Workout Clothes Gym Wear Track Suits Yoga Jacket Pants Vest 4 Pieces Set Blue XL
+
+Cluster 5:
+  Top terms: cape, nude, stiletto, high, pumps, heel, ankle, cloak, robbin, shawl
+  Sample items:
+    - Genhoo Buisness Outift Women Business Attire for Women Suit Jacket Nude XL
+    - Allegra K Woman High Heel Ankle Strap Sandals (Size US 7.5) Black
+    - Full Length Men Hooded Cape Cloak Role Play Costume Silk Black XL
+    - Ladies' Hooded Cape with Fringed Hem,Tassel Poncho shawl Cape Button Cardigan (Khaki)
+    - Rubie's Adult Star Wars Jedi Knight Hooded Cape
+
+Cluster 6:
+  Top terms: socks, non, slip, pairs, low, cut, boat, grip, skid, cotton
+  Sample items:
+    - No Show Socks Women 4-6 pairs Low Cut Cotton Casual Ankle Socks with Non Slip Flat Boat Line (4 Pairs grey sizes 9-12)
+    - (2 Pairs) Closed Toe Socks for Women Wear Pumps Boots Clogs,Half Toe Sleeves with Anti Slip Silicone Relief Pain Corn Blister,Toe Topper Socks Non Skid (Fresh)
+    - Men's 6 Pairs No Show Casual Socks Low Cut Cotton Nonslip Heel Grip for Boat Shoes Loafers
+    - Women's Cotton Athletics Casual Low Cut Flat Non-Slip Boat Liner No Show Socks, 6 Pack Black
+    - QandSweet Unisex Baby Non-Slip Socks Toddler Boy Girls' Ankle Length Socks Non-Skid (Mixed 8 Colors, 6-12 Months)
+
+Cluster 7:
+  Top terms: socks, crew, pairs, pack, compression, men, cotton, wool, knee, size
+  Sample items:
+    - YUEDGE 5 Pairs Men's Moisture Control Cushioned Dry Fit Casual Athletic Crew Socks for Men (Blue, Size 9-12)
+    - HOYISOX Diamond Print 20-30 mmHg Running and Sports Compression Socks for Men & Women, Recovery Fast (X-Large, Purple diamond)
+    - MOXY Socks Black with USA GOP Elephants Premium American Dress Crew Socks
+    - Gold Toe Mens 6PK Mid-Weight No Show Socks White 10-13
+    - TOBGB 2 Pairs Seven Song Lyrics Gift Girlfriend Gift Seven Album Inspired Socks for Fans Gifts (Moon and Saturn Socks)
+
+Cluster 8:
+  Top terms: shoe, laces, shoelaces, flat, black, kids, white, charms, shoes, nike
+  Sample items:
+    - Professional Shoe Shine Cloth. Shoe Buffing Cloth. Natural Fabric. 2-Pack.
+    - Juvale 3-Pack Iron Shoe Horns - Portable Sized Metal Shoe Horn for Men and Women with Hanging Hole for Boots, Dress Shoes, Perfect for Travel, Black, 11.8 Inches
+    - No Tie Shoelaces by LACEEZ - 3 Pack - For Kids Shoes & Sneakers - Elastic  (XL: Kids Shoe 3 to 4.5, White + Red + Black)
+    - Forever Calista-55 Womens Open Toe Rhinestones T-strap Sandals Bling Bling Flexible Flat Shoe (9, White)
+    - New Balance Flat Tube Shoe Laces (54", NB White)
+
+Cluster 9:
+  Top terms: case, iphone, card, cover, holder, hard, black, leather, airtag, glasses
+  Sample items:
+    - Moto E (1st Gen) Case, Capsule-Case Slim Fit Snap-on (White) Hard Case for Motorola Moto E (1st Gen) XT830C XT1019 XT1021 XT1022 XT1023 - (Cherry Blossom Pink)
+    - Canvaslove Blue Leopard Patten Canvas Laptop Shoulder Messenger Bag Case Sleeve Laptop Briefcase (15 Inch/15.6 Inch)
+    - OutTop Holloween Pattern Pillowcase Cotton Linen Square Decorative Throw Pillow Case Cushion Cover, 18"x 18" (Style A)
+    - Iphone 6/6S Wallet Phone Case, Phone Card Case, Real Leather Thin Back Case Cover With Credit Card Holder Brown Case
+    - Coach Mens Embossed Money Clip Card Case 74418 Olive
+

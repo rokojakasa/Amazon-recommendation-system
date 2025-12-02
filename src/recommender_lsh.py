@@ -218,10 +218,7 @@ def main():
         f.writelines(out_lines)
 
     print("\nSaved examples to results/lsh_examples.txt")
-
-
-    print("\nSaved examples to results/lsh_examples.txt")
-
+    
         # ---- SAVE TRAINED LSH DATA ----
     import pickle
 

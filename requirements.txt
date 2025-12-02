@@ -1,0 +1,5 @@
+pandas==2.2.1
+numpy==1.26.4
+tqdm==4.66.2
+mmh3==4.1.0
+scikit-learn==1.4.1
