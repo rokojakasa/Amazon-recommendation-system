@@ -48,6 +48,7 @@ After downloading, place both files into the local directory:
 data/
 ├── Amazon_Fashion.jsonl.gz
 └── meta_Amazon_Fashion.jsonl.gz
+```text
 
 ### Option 2: Shell script
 Adjust directory in `download_data.sh` and run the script
