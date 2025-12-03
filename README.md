@@ -25,7 +25,32 @@ This repository implements three recommendation approaches on the Amazon Fashion
 ├── requirements.txt
 └── README.md
 
+## Dataset Setup (Required Before Running Any Script)
 
+This project uses the **Amazon Fashion review and metadata dataset**, which is **not included in this repository** due to its large size.
+
+You must manually download the dataset **before running any code** using **one of the following options**:
+
+### Option 1: Manual Download  
+Download the following files from the official Amazon Reviews 2023 site:  
+https://amazon-reviews-2023.github.io/index.html  
+
+Required files:
+- `Amazon_Fashion.jsonl.gz`
+- `meta_Amazon_Fashion.jsonl.gz`
+- `meta_Electronics.jsonl.gz
+- `Electronics - 5core`
+- optional - train/valid/test split for Electronics
+
+After downloading, place both files into the local directory:
+
+```text
+data/
+├── Amazon_Fashion.jsonl.gz
+└── meta_Amazon_Fashion.jsonl.gz
+
+### Option 2: Shell script
+Adjust directory in `download_data.sh` and run the script
 
 ## 1. Shared Data Loader
 
