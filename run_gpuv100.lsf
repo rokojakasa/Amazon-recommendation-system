@@ -1,0 +1,17 @@
+#!/bin/bash
+#BSUB -J recommender_cf                        # Job name
+#BSUB -o recommender_cf.out                       # Output log file
+#BSUB -e recommender_cf.err                       # Error log file
+#BSUB -q gpuv100                              # Queue name
+#BSUB -n 8                                    # The more CPUS the less likely to admitted to the queue. Check delta memory from the out file to adjust this
+#BSUB -gpu "num=1:mode=exclusive_process"     # Only 1 GPU allowed for gpuv100, gpua100, gpuh100 queue
+#BSUB -R "rusage[mem=3G]"                     # 3 GB memory per core → 8*3 = 24 GB total
+#BSUB -R "span[hosts=1]"                      # Force all cores on the same node. Always keep span to just 1 node unless a specific reason not to, Increasing spanmight slow down performance
+#BSUB -W 24:00                                # Max allowed runtime (24 hours)
+
+module load python3
+source ~/minhash_env/bin/activate
+
+cd /zhome/4f/1/223566/home/computational_tools/Amazon-recommendation-system
+export PYTHONPATH=$(pwd):$PYTHONPATH
+python src/recommender_cfBPR.py

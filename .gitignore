@@ -5,6 +5,7 @@ data/
 *.err
 *.out
 *.lsf
+!run_gpuv100.lsf
 checkpoints/
 # Byte-compiled / optimized / DLL files
 __pycache__/
