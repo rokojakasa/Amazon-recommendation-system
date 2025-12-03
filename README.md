@@ -94,7 +94,32 @@ Uses saved `.pkl` files for instant recommendations.
 
 ---
 
-## 3. Content-Based Recommendations (TF-IDF + Cosine Similarity)
+## 4. User–Item Collaborative Filtering (Matrix Factorization + BPR)
+
+### Script: `src/recommender_cf_bpr.py`  
+### Course topic: Matrix Factorization + Ranking Optimization  
+### Classification: **Counts as a “new algorithm/topic” in the project**
+
+Implements a **user–item collaborative filtering recommender** using **matrix factorization optimized with Bayesian Personalized Ranking (BPR)**. Unlike the LSH-based item–item method, which recommends similar products based on shared customers, this approach directly learns **personalized user preferences** from historical interactions.
+
+Each user and each item is represented as a low-dimensional latent vector learned from data. Instead of predicting explicit star ratings, the model is trained using **implicit feedback** and a ranking objective: for each user, items they interacted with should be ranked higher than randomly sampled non-interacted items. This makes the approach well-suited for sparse Amazon review data.
+
+Pipeline:
+1. Load user–item interaction data  
+2. Construct implicit feedback matrix  
+3. Train matrix factorization model with BPR loss  
+4. Sample negative items during training  
+5. Generate Top-K recommendations per user  
+6. Evaluate using Recall@K  
+7. Export example recommendations to `results/`
+
+Run:
+```bash
+python -m src.recommender_cf_bpr
+```
+---
+
+## 5. Content-Based Recommendations (TF-IDF + Cosine Similarity)
 
 ### Script: `src/recommender_tfidf.py`  
 ### Course topic: Vector Representation + Similarity Search  
@@ -114,7 +139,7 @@ python -m src.recommender_tfidf
 
 ---
 
-## 4. K-Means Clustering on TF-IDF Vectors
+## 6. K-Means Clustering on TF-IDF Vectors
 
 ### Script: `src/recommender_kmeans.py`  
 ### Course topic: Clustering  
@@ -134,15 +159,14 @@ python -m src.recommender_kmeans
 
 ---
 
+
 ## Summary of Included Algorithms
-
-| Script                    | Methodology                         | Course Topic            | New Topic? |
-|--------------------------|--------------------------------------|--------------------------|------------|
-| recommender_lsh.py       | MinHash + LSH (item–item CF)         | Similarity + LSH         | Yes        |
-| recommender_tfidf.py     | TF-IDF + Cosine Similarity           | Vector models            | No         |
-| recommender_kmeans.py    | K-Means Clustering on TF-IDF         | Clustering               | No         |
-| query_lsh.py             | LSH querying utility                 | Auxiliary                | –          |
-
-These components together satisfy the project requirement of combining multiple computational tools and algorithms: one standard technique, two “new” topics (LSH and clustering), and clear separation of content-based vs. behaviour-based approaches.
+| Script                    | Methodology                               | Course Topic                     | New Topic? |
+|---------------------------|--------------------------------------------|----------------------------------|------------|
+| recommender_lsh.py        | MinHash + LSH (item–item CF)               | Similarity + LSH                 | No        |
+| recommender_cfBPR.py      | Matrix Factorization + BPR (user–item CF)  | Matrix Factorization + Ranking   |  Yes       |
+| recommender_tfidf.py      | TF-IDF + Cosine Similarity                 | Vector models                    | No         |
+| recommender_kmeans.py     | K-Means Clustering on TF-IDF               | Clustering                       | No         |
+| query_lsh.py              | LSH querying utility                       | Auxiliary                        | –          |
 
 
