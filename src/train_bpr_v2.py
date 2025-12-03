@@ -128,7 +128,7 @@ class BPRTrainer:
         self.start_epoch = load_checkpoint(self.model, self.optimizer, path=self.checkpoint_path, device=self.device)
         self.val_df = val_df
 
-    def train(self, epochs=30, recall_k=50):
+    def train(self, epochs=30):
         best_loss = float('inf')
         for epoch in range(self.start_epoch, epochs):
             self.model.train()
@@ -151,11 +151,6 @@ class BPRTrainer:
 
             t1 = time.time()
             avg_loss = epoch_loss / len(self.train_dataset)
-
-            # Validate every 10 epochs
-            # if self.val_df is not None and (epoch + 1) % 10 == 0:
-                # recall = recall_at_k_batch(self.model, self.val_df, self.train_dataset, n_items=self.model.item_factors.num_embeddings, k=recall_k, device=self.device)
-            #     print(f"[Epoch {epoch+1}] Validation Recall@{recall_k}: {recall:.4f}")
 
             print(f"[Epoch {epoch+1}] Loss: {avg_loss:.6f} — Time: {t1 - t0:.1f}s")
             if avg_loss < best_loss:
@@ -185,25 +180,6 @@ def recommend_topk_batch_large(model, user_indices, seen_items_dict, n_items, k=
                                batch_size=128, chunk_size=10000, device=None):
     """
     Large-scale batch top-K recommendation for millions of items.
-    
-    Parameters
-    ----------
-    model : nn.Module
-        Trained BPR model
-    user_indices : list or np.array
-        User indices to generate recommendations for
-    seen_items_dict : dict
-        user_id -> set of items already seen
-    n_items : int
-        Total number of items
-    k : int
-        Top-K items to recommend
-    batch_size : int
-        Number of users per batch
-    chunk_size : int
-        Number of items per scoring chunk
-    device : torch.device or None
-        Device to use; if None, inferred from model
     """
     model.eval()
     device = device or next(model.parameters()).device
@@ -257,25 +233,6 @@ def recall_at_k_batch_large(model, df_eval, train_df, n_items, k=10,
                             batch_size=128, chunk_size=10000, device=None):
     """
     Large-scale batched recall@K computation using chunked scoring.
-    
-    Parameters
-    ----------
-    model : nn.Module
-        Trained BPR model
-    df_eval : pd.DataFrame
-        Evaluation DataFrame with columns ['user_idx', 'product_idx']
-    train_df : pd.DataFrame
-        Training DataFrame to mask seen items
-    n_items : int
-        Total number of items
-    k : int
-        Recall@K
-    batch_size : int
-        Number of users per batch
-    chunk_size : int
-        Number of items per scoring chunk
-    device : torch.device or None
-        Device to use; inferred from model if None
     """
     model.eval()
     device = device or next(model.parameters()).device
@@ -345,9 +302,6 @@ def sample_recommendations(model, train_df, item_to_title, users, n_last=5, k=10
 
 
 
-# -----------------------------
-# Example Main
-# -----------------------------
 if __name__ == "__main__":
     from src.data_loader import load_preprocess_split
 
@@ -376,10 +330,9 @@ if __name__ == "__main__":
     )
 
     # # Uncomment to train
-    # model = trainer.train(epochs=30, recall_k=50)
+    # model = trainer.train(epochs=30)
     
     
-
     # Load checkpoint only (skip training)
     trainer.model.load_state_dict(torch.load(CHECKPOINT_FILE, map_location=trainer.device)['model_state_dict'])
     model = trainer.model
