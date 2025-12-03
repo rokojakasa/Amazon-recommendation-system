@@ -4,7 +4,7 @@ This repository implements three recommendation approaches on the Amazon Fashion
 
 ## Repository Structure
 
-
+```text
 .
 ├── data/                     # LOCAL ONLY (Amazon Fashion dataset, ignored by git)
 │   ├── Amazon_Fashion.jsonl.gz
@@ -24,7 +24,7 @@ This repository implements three recommendation approaches on the Amazon Fashion
 │
 ├── requirements.txt
 └── README.md
-
+```
 ## Dataset Setup (Required Before Running Any Script)
 
 This project uses the **Amazon Fashion review and metadata dataset**, which is **not included in this repository** due to its large size.
@@ -67,7 +67,6 @@ Run order: called automatically by all scripts.
 
 ### Script: `src/recommender_lsh.py`  
 ### Course topic: Similar Items + Locality Sensitive Hashing (LSH)  
-### Classification: Counts as a “new algorithm/topic” in the project
 
 Implements item–item collaborative filtering using MinHash to approximate Jaccard similarity between item user-sets, and LSH banding to efficiently retrieve candidate neighbours.
 
@@ -85,20 +84,15 @@ python -m src.recommender_lsh
 
 ### Query without retraining
 
-After training once:
-
-python -m src.query_lsh <item_idx> -k 5
-Example: python -m src.query_lsh <70994> -k 5
-
+After training once, use query_lsh.py to sample recommendations.
 Uses saved `.pkl` files for instant recommendations.
 
 ---
 
-## 4. User–Item Collaborative Filtering (Matrix Factorization + BPR)
+## 3. User–Item Collaborative Filtering (Matrix Factorization + BPR)
 
 ### Script: `src/recommender_cf_bpr.py`  
 ### Course topic: Matrix Factorization + Ranking Optimization  
-### Classification: **Counts as a “new algorithm/topic” in the project**
 
 Implements a **user–item collaborative filtering recommender** using **matrix factorization optimized with Bayesian Personalized Ranking (BPR)**. Unlike the LSH-based item–item method, which recommends similar products based on shared customers, this approach directly learns **personalized user preferences** from historical interactions.
 
@@ -119,11 +113,10 @@ python -m src.recommender_cf_bpr
 ```
 ---
 
-## 5. Content-Based Recommendations (TF-IDF + Cosine Similarity)
+## 4. Content-Based Recommendations (TF-IDF + Cosine Similarity)
 
 ### Script: `src/recommender_tfidf.py`  
 ### Course topic: Vector Representation + Similarity Search  
-### Classification: Does not count as a new topic (standard baseline)
 
 Creates a content-based recommender using TF-IDF vectors computed from product titles. Cosine similarity identifies the top-k closest textual neighbours.
 
@@ -139,11 +132,10 @@ python -m src.recommender_tfidf
 
 ---
 
-## 6. K-Means Clustering on TF-IDF Vectors
+## 5. K-Means Clustering on TF-IDF Vectors
 
 ### Script: `src/recommender_kmeans.py`  
 ### Course topic: Clustering  
-### Classification: Counts as a “new algorithm/topic” in the project
 
 Clusters all products in the TF-IDF space using K-means to identify semantic item groups (e.g., graphic tees, maxi dresses, yoga leggings, Halloween costumes).
 
