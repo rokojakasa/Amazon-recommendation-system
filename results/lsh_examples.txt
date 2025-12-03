@@ -1,5 +1,12 @@
 Item–item CF with MinHash+LSH examples (NUM_HASHES=128, NUM_BANDS=64, K=5)
 
+Loaded meta and reviews in 197.68610906600952 seconds
+Built mappings and item_to_users in 13.69564938545227 seconds
+Number of rows in interaction_df: 15473536
+Computed MinHash signatures in 600.7939383983612 seconds
+Assigned LSH bands in 71.31416296958923 seconds
+
+
 Query item idx 335426: Ciglow Bluetooth Headphone, Wireless Hands Free Ear Hook Headset Painless Bone Conduction Earphone Waterproof Ergonomic Design Headset(red)
 Top 5 similar products:
   - idx=220705, score=0.1875, title=Accering Wireless Bluetooth Headphones, Best Running/Sports Earphones, IPX7 Sweatproof Bass Stereo in Ear Headset with Mic for iPhone, Gym, Workout
@@ -42,13 +49,3 @@ Top 5 similar products:
   - idx=336869, score=0.0234, title=Venus Laowa 17mm f/1.8 Lens for Micro Four Thirds
   - idx=79846, score=0.0234, title=Olympus M.Zuiko 40-150mm f/4.0-5.6 Micro ED Digital Zoom Lens
 
-Query item idx 53736: 2 Pack Samsung Micro-USB 3.0 Data Cable for Galaxy S5 and Note 3 N9000 - Non-Retail Packaging - White
-Top 5 similar products:
-  (No candidates found)
-Query item idx 355003: Infiland Case for Samsung Galaxy Tab A 10.1 Case, Smart 360 Degrees Rotating Stand Case Cover for 2016 Release Samsung Galaxy Tab A 10.1-Inch Tablet (SM-T580 / SM-T585, No S Pen Version)- Purple
-Top 5 similar products:
-  - idx=333818, score=0.1172, title=Lenovo 2019 Chromebook S330 14" Thin and Light Laptop Computer, MediaTek MTK 8173C 1.70GHz, 4GB RAM, 64GB eMMC, 802.11ac WiFi, Bluetooth 4.1, USB-C, HDMI, Chrome OS
-
-Query item idx 286045: Gigabyte GA-970A-DS3 AM3+ AMD 970 SATA 6Gb/s USB 3.0 ATX AMD Motherboard
-Top 5 similar products:
-  (No candidates found)

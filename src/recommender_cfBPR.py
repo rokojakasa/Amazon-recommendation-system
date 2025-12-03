@@ -7,6 +7,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 import heapq
+from tqdm import tqdm
 
 CHECKPOINT_DIR = "checkpoints"
 os.makedirs(CHECKPOINT_DIR, exist_ok=True)
@@ -179,52 +180,87 @@ def recommend_topk(model, user_idx, seen_items, n_items, k=10, device='cpu'):
 def recommend_topk_batch_large(model, user_indices, seen_items_dict, n_items, k=10,
                                batch_size=128, chunk_size=10000, device=None):
     """
-    Large-scale batch top-K recommendation for millions of items.
+    Vectorized large-scale batch top-K recommendation.
+    Returns list of top-k item lists for each user in user_indices (same order).
     """
     model.eval()
     device = device or next(model.parameters()).device
-    all_items = torch.arange(n_items, device=device)
+    emb_dim = model.item_factors.embedding_dim
+
+    # Pull full item embeddings and biases once (device)
+    item_weights = model.item_factors.weight.to(device)                 # (n_items, emb_dim)
+    item_bias = model.item_biases.weight.view(-1).to(device)            # (n_items,)
+
+    # We'll operate chunk by chunk over items to avoid OOM
     topk_all = []
+    users = list(user_indices)  # ensure indexable
+    # Process users in batches
+    for u_start in range(0, len(users), batch_size):
+        batch_users = users[u_start:u_start + batch_size]
+        bsize = len(batch_users)
 
-    for start_user in range(0, len(user_indices), batch_size):
-        batch_users = user_indices[start_user:start_user + batch_size]
-        batch_size_actual = len(batch_users)
-        # Initialize heaps for top-K per user
-        topk_heaps = [[] for _ in range(batch_size_actual)]
+        # Prepare user embeddings and biases: (bsize, emb_dim) and (bsize,)
+        user_idx_tensor = torch.tensor(batch_users, dtype=torch.long, device=device)
+        user_emb = model.user_factors(user_idx_tensor)          # (bsize, emb_dim)
+        user_bias = model.user_biases(user_idx_tensor).view(-1) # (bsize,)
 
-        for start_item in range(0, n_items, chunk_size):
-            end_item = min(start_item + chunk_size, n_items)
-            items_chunk = all_items[start_item:end_item]
-            chunk_size_actual = len(items_chunk)
+        # Initialize topk tensors (scores and item indices)
+        topk_scores = torch.full((bsize, k), -1e18, device=device)
+        topk_items = torch.full((bsize, k), -1, dtype=torch.long, device=device)
 
-            # Flatten user-item pairs for model
-            user_tensor = torch.tensor(batch_users, device=device).unsqueeze(1).repeat(1, chunk_size_actual).flatten()
-            item_tensor = items_chunk.unsqueeze(0).repeat(batch_size_actual, 1).flatten()
+        # iterate item chunks
+        for it_start in range(0, n_items, chunk_size):
+            it_end = min(n_items, it_start + chunk_size)
+            cur_items = torch.arange(it_start, it_end, device=device, dtype=torch.long)  # (chunk_size,)
+            # get embeddings and biases for this chunk
+            V = item_weights[it_start:it_end]   # (chunk_size, emb_dim)
+            Bi = item_bias[it_start:it_end]     # (chunk_size,)
 
-            # Forward pass
-            scores_flat = model(user_tensor, item_tensor)
-            scores = scores_flat.view(batch_size_actual, chunk_size_actual)
+            # compute scores: user_emb @ V.T + user_bias + Bi
+            # (bsize, emb_dim) @ (emb_dim, chunk_size) -> (bsize, chunk_size)
+            scores_chunk = user_emb @ V.t()                       # (bsize, chunk_size)
+            scores_chunk = scores_chunk + user_bias.unsqueeze(1)  # add user bias
+            scores_chunk = scores_chunk + Bi.unsqueeze(0)         # add item bias
 
-            # Mask seen items
-            for i, u in enumerate(batch_users):
-                seen = seen_items_dict.get(u, set())
-                mask_indices = [idx - start_item for idx in seen if start_item <= idx < end_item]
-                if mask_indices:
-                    scores[i, mask_indices] = -1e9
+            # Mask seen items inside this chunk for each user
+            # Build a boolean mask (bsize, chunk_size) default False
+            if seen_items_dict:
+                # For efficiency: for each user, compute list of indices within chunk
+                # We'll create a mask per user only for users that have seen items in the chunk.
+                mask = torch.zeros_like(scores_chunk, dtype=torch.bool, device=device)
+                for i, u in enumerate(batch_users):
+                    seen = seen_items_dict.get(int(u), None)
+                    if not seen:
+                        continue
+                    # compute intersection with current chunk
+                    # Using Python loop over seen small set is OK (seen sets are usually small)
+                    # Create a list of relative indices to mask
+                    rel_indices = [idx - it_start for idx in seen if it_start <= idx < it_end]
+                    if rel_indices:
+                        mask[i, rel_indices] = True
+                if mask.any():
+                    scores_chunk = scores_chunk.masked_fill(mask, -1e18)
 
-            # Update heaps
-            scores_cpu = scores.cpu().numpy()
-            for i in range(batch_size_actual):
-                for idx, score in enumerate(scores_cpu[i]):
-                    if len(topk_heaps[i]) < k:
-                        heapq.heappush(topk_heaps[i], (score, idx + start_item))
-                    else:
-                        heapq.heappushpop(topk_heaps[i], (score, idx + start_item))
+            # Now merge topk_scores (bsize, k) with scores_chunk (bsize, chunk_size)
+            # Create concatenated scores and item indices
+            # Build item indices for this chunk: (chunk_size,) -> (1, chunk_size) -> expand
+            chunk_item_indices = torch.arange(it_start, it_end, device=device, dtype=torch.long)
+            chunk_item_indices = chunk_item_indices.unsqueeze(0).expand(bsize, -1)  # (bsize, chunk_size)
 
-        # Extract sorted top-K per user
-        for heap in topk_heaps:
-            topk_sorted = [idx for score, idx in sorted(heap, key=lambda x: -x[0])]
-            topk_all.append(topk_sorted)
+            # Concatenate along dim=1: existing top-k and new chunk
+            cat_scores = torch.cat([topk_scores, scores_chunk], dim=1)       # (bsize, k + chunk_size)
+            cat_items  = torch.cat([topk_items, chunk_item_indices], dim=1)  # (bsize, k + chunk_size)
+
+            # Take top-k along dim=1
+            topk_vals, topk_idx = torch.topk(cat_scores, k=k, dim=1)
+            # gather corresponding items
+            topk_items = torch.gather(cat_items, 1, topk_idx)
+            topk_scores = topk_vals
+
+        # after all chunks, topk_items holds top-k item indices per user in batch
+        # convert to python lists
+        topk_batch = [topk_items[i].cpu().tolist() for i in range(bsize)]
+        topk_all.extend(topk_batch)
 
     return topk_all
 
@@ -232,7 +268,7 @@ def recommend_topk_batch_large(model, user_indices, seen_items_dict, n_items, k=
 def recall_at_k_batch_large(model, df_eval, train_df, n_items, k=10,
                             batch_size=128, chunk_size=10000, device=None):
     """
-    Large-scale batched recall@K computation using chunked scoring.
+    Vectorized recall@k using the improved recommend_topk_batch_large.
     """
     model.eval()
     device = device or next(model.parameters()).device
@@ -240,8 +276,10 @@ def recall_at_k_batch_large(model, df_eval, train_df, n_items, k=10,
     # Build user -> seen items from training set
     train_user_pos = train_df.groupby('user_idx')['product_idx'].apply(set).to_dict()
     users_eval = df_eval['user_idx'].unique()
+    # Ensure users_eval is list of ints (keeps order stable)
+    users_eval = [int(u) for u in users_eval]
 
-    # Get top-K recommendations
+    # Get top-K recommendations (vectorized)
     topk_all = recommend_topk_batch_large(
         model, users_eval, train_user_pos, n_items, k=k,
         batch_size=batch_size, chunk_size=chunk_size, device=device
@@ -251,7 +289,7 @@ def recall_at_k_batch_large(model, df_eval, train_df, n_items, k=10,
     user_to_eval_items = df_eval.groupby('user_idx')['product_idx'].apply(list).to_dict()
     recalls = []
 
-    for u, topk in zip(users_eval, topk_all):
+    for u, topk in tqdm(zip(users_eval, topk_all), total=len(users_eval), desc="Calculating recall"):
         actual_items = user_to_eval_items.get(u, [])
         if not actual_items:
             continue
@@ -345,5 +383,6 @@ if __name__ == "__main__":
     # -----------------------------
     # Evaluate test set
     # -----------------------------
-    test_recall = recall_at_k_batch_large(model, val_df, train_df, n_items, k=50, device=trainer.device, batch_size=128, chunk_size=10000)
+    val_subset = val_df.iloc[:5000]
+    test_recall = recall_at_k_batch_large(model, val_subset, train_df, n_items, k=50, device=trainer.device, batch_size=128, chunk_size=10000)
     print(f"\n[Test Recall@50] {test_recall:.4f}")

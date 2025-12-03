@@ -14,4 +14,4 @@ source ~/minhash_env/bin/activate
 
 cd /zhome/4f/1/223566/home/computational_tools/Amazon-recommendation-system
 export PYTHONPATH=$(pwd):$PYTHONPATH
-python src/recommender_cfBPR.py
+python src/recommender_cf.py

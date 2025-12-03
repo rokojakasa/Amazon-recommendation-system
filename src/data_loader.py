@@ -4,7 +4,6 @@ from pathlib import Path
 from typing import Optional, Tuple
 
 import pandas as pd
-from datasets import load_dataset
 
 
 # Root dir = repo root (two levels up from this file)
@@ -155,6 +154,5 @@ def build_interaction_df_eval(train_df, val_df, test_df, meta_df):
     val_df = val_df[keep_cols]
     test_df = test_df[keep_cols]
     
-    # Keep only necessary columns
     return train_df, val_df, test_df
     

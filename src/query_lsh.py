@@ -1,13 +1,13 @@
 import pickle
 
 def load_lsh():
-    with open("../results/lsh_signatures.pkl", "rb") as f:
+    with open("results/lsh_signatures.pkl", "rb") as f:
         product_signatures = pickle.load(f)
 
-    with open("../results/lsh_bands.pkl", "rb") as f:
+    with open("results/lsh_bands.pkl", "rb") as f:
         bands = pickle.load(f)
 
-    with open("../results/lsh_idx_to_title.pkl", "rb") as f:
+    with open("results/lsh_idx_to_title.pkl", "rb") as f:
         idx_to_title = pickle.load(f)
 
     return product_signatures, bands, idx_to_title

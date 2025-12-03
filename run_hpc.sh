@@ -1,7 +1,7 @@
 #!/bin/bash
-#BSUB -J minhash_job                     # Job name
-#BSUB -o minhash_job.out                 # Output log file
-#BSUB -e minhash_job.err                 # Error log file
+#BSUB -J minhash_job2                     # Job name
+#BSUB -o minhash_job2.out                 # Output log file
+#BSUB -e minhash_job2.err                 # Error log file
 #BSUB -q hpc                           # Queue (no GPU needed)
 #BSUB -n 8                                # Number of CPU cores
 #BSUB -R "rusage[mem=4G]"                # Memory per core

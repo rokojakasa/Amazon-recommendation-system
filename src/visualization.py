@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+from data_loader import load_preprocess_split
 
 # Example DataFrame
 df = pd.read_csv('data/Electronics_5core.csv.gz', compression='gzip')
@@ -19,4 +20,8 @@ plt.xticks(rotation=0)
 plt.savefig('results/rating_distribution.png', dpi=300, bbox_inches='tight')  # You can change file format and name
 
 # Optionally show the plot
-plt.show()
+# plt.show()
+
+val_df = pd.read_csv('data/Electronics_valid.csv.gz', compression='gzip')
+print(f"Number of rows: {len(val_df)}")
+print(f"Number of unique users: {val_df['user_id'].nunique()}")
