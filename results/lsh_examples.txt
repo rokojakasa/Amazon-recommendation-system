@@ -1,0 +1,51 @@
+Item–item CF with MinHash+LSH examples (NUM_HASHES=128, NUM_BANDS=64, K=5)
+
+Loaded meta and reviews in 197.68610906600952 seconds
+Built mappings and item_to_users in 13.69564938545227 seconds
+Number of rows in interaction_df: 15473536
+Computed MinHash signatures in 600.7939383983612 seconds
+Assigned LSH bands in 71.31416296958923 seconds
+
+
+Query item idx 335426: Ciglow Bluetooth Headphone, Wireless Hands Free Ear Hook Headset Painless Bone Conduction Earphone Waterproof Ergonomic Design Headset(red)
+Top 5 similar products:
+  - idx=220705, score=0.1875, title=Accering Wireless Bluetooth Headphones, Best Running/Sports Earphones, IPX7 Sweatproof Bass Stereo in Ear Headset with Mic for iPhone, Gym, Workout
+  - idx=128183, score=0.1094, title=Wireless Bluetooth Mouse for Laptop,Led Slim Dual Mode Mouse(Bluetooth 5.1+ USB)Silent Rechargeable Mouse with Type C Adapter,3 Adjustable DPI Computer Mice for MacBook/iPad OS13 Above(Purple)
+  - idx=279286, score=0.0938, title=Meifox Lightning Earbuds, iPhone Wired Headphones with Microphone & Volume Control, MFi Certified Noise Isolation Earphones, Headphones for iPhone 13/12/11 Pro Max X XS XR 8P 7P (Black)
+  - idx=188177, score=0.0703, title=Protective Case for TCL Roku TV RC280 Remote, Silicone Cover Shock Proof Remote Controller Skin, Cute Cat Ear Shape Anti Slip Universal Replacement Sleeve(Glow Blue)
+
+Query item idx 58371: Panlong 2 Port AV RCA Switch 2 in 1 Out Composite Video L/R Audio Switcher Selector Box for DVD Player, Sega Genesis, SNES, N64, PS2/3 Game Consoles
+Top 5 similar products:
+  (No candidates found)
+Query item idx 13112: IVEOPPE Keyboard Case for Galaxy Tab A8 10.5 Inch SM-X200/X205/X207 2022, Detachable Wireless Keyboard,with 032 Backlit Keyboard 7 Colors Magnetically Bluetooth Keyboard,Black
+Top 5 similar products:
+  - idx=214959, score=0.0391, title=Bluetooth Speaker, Portable Speaker Bluetooth 5.0 with Loud Stereo Sound Wireless Speaker Waterproof IP5 Outdoor Speakers, 15H Playtime, Lights for Bike, Camping, Built-in Mic, Party, Beach, Travel
+  - idx=185740, score=0.0312, title=Pyle PPSP18 Bluetooth Pillow Speaker, Rechargeable Portable Sleep Therapy Noise Sound Machine with Soothing All-Natural Sounds Remote Control | AUX Input | 1 GB Built in Memory
+
+Query item idx 144222: RUMBLE 24/7 Night Running Gear Shoe Lights- Flashing LED Reflective Gear for Runners, Joggers, Bikers, Kids & Pets (One Pair) Black
+Top 5 similar products:
+  - idx=343322, score=0.0625, title=RCA AH740F Power and Sync Cable for iPod/iPhone
+
+Query item idx 128414: 200ft Black Indoor/Outdoor RG-6 Coax Cable 75 Ohm UV Resistance (CATV, Satellite TV, or Broadband Internet) with Quad Shield Compression COAXIAL CONNECTORS
+Top 5 similar products:
+  - idx=335200, score=0.1328, title=Master Cables Black Garmin Compatible Replacement - Micro USB Cable – High Quality – Connects with PC - Helps to Update and Transfer Data – Plug and Play - 6 ft. Long Wire
+  - idx=165215, score=0.1172, title=Earphones Plus brand 300-B-6BLK-6CLR-XS Replacement earphone cushions, replacement earbud tips, 12 pairs size extra small + 1 bonus memory foam pair, black and clear
+  - idx=193577, score=0.1094, title=PCT 2-Port Bi-Directional Cable TV, OTA, Satellite HDTV Amplifier Splitter Signal Booster with Passive Return And Coax Cable - cableTVamps
+  - idx=145613, score=0.1094, title=TDK Blu-ray Disc 10 Pack - 50 GB 4X Speed BD-R DL - Printable discs
+  - idx=148924, score=0.0859, title=6.6FT USB C to Lightning Cable 4Pack, 【Apple MFi Certified】 iPhone Fast Charger Cable, USB-C to Lightning Charging Cord for iPhone 13/13 Pro/13 Pro Max/ 12 Mini/12/12 Pro/11/11 Pro/AirPods
+
+Query item idx 117040: AgoKud Adjustable Laptop Stand for Desk, Portable Laptop Riser for Laptops 8-17", with Heat-Vent, Supports Up to 44 Lbs Laptop Holder, Compatible with MacBook, Air, Pro, Dell XPS, Samsung
+Top 5 similar products:
+  - idx=126608, score=0.1250, title=for Lenovo Tab 2 10.1 A10-70F A10-70LC Case, Ultra Lightweight Smart Slim Shell Stand Cover Leather Case for Tab 10 TB-X103F, Tab 3 10.1 TB3-X70F X70M X70L 10.1" (Purple)
+  - idx=234561, score=0.0938, title=MoKo Case Compatible with Lenovo Tab P11 Plus Case 2021(TB-616F)/Tab P11 2020 11 inch (TB-J607F TB-J606X TB-J606F), Origami Standing Shell Cover Case with Multi Angle Magnetic TPU Back Cover, Black
+  - idx=321926, score=0.0703, title=WONNIE Laptop Stand Holder, Ergonomic Aluminum Computer Stand for Desk, Adjustable Laptop Riser with Heat-Vent, Multi-Angle Lapdesks Compatible with MacBook Air/Pro, Dell, HP, Lenov
+  - idx=165423, score=0.0469, title=5pcs DIY Pillow Speaker, New 3.5mm Mini Stereo Speaker for MP3 Phone Portable CD
+
+Query item idx 73164: Neewer® 36x36 inch/90x90 cm Photo Studio Shooting Tent Light Cube Diffusion Soft Box Kit with 4 Colors Backdrops (Red Dark Blue Black White) for Photography
+Top 5 similar products:
+  - idx=43117, score=0.0312, title=Monoprice Cable Tie 4 inch 18LBS, 100pcs/Pack - Green
+  - idx=174612, score=0.0312, title=RED Slim Compact Protective Travel Digital Camera Carrying Case with Accessory Compartment for Nikon Coolpix L840, L830, L820, L810, P510, S9100 Digital SLR DSLR Camera
+  - idx=79843, score=0.0234, title=Sigma 19mm F2.8 EX DN -Micro 4/3 400963
+  - idx=336869, score=0.0234, title=Venus Laowa 17mm f/1.8 Lens for Micro Four Thirds
+  - idx=79846, score=0.0234, title=Olympus M.Zuiko 40-150mm f/4.0-5.6 Micro ED Digital Zoom Lens
+

@@ -1,0 +1,92 @@
+K-means Clustering Examples (10 clusters shown, K=100)
+
+Cluster 0:
+  Top terms: tees, graphic, shirt, tops, short, shirts, sleeve, funny, casual, women
+  Sample items:
+    - vacziom Womens Spread Kindness T Shirt Summer Dandelion Graphic Tees Casual Funny Sayings Letter Printed Shirts Tops Blue
+    - Avanova Womens Graphic Tees Summer Crewneck Short Sleeve T-Shirts Casual Novelty Loose Fit Tops Astronaut White 02 Medium
+    - Nlife Bring On The Sunshine Graphic Long Sleeves Tees Blouses for Women Tops Sweaters for Women
+    - Ew David Shirts for Women Funny Rose Apothecary Graphic Tees Summer Cute Letter Print Short Sleeve Tee Top
+    - It's Just a Bunch of Hocus Pocus Shirts Women Sanderson Sister Graphic Halloween T-Shirt Casual Short Sleeve Tops
+
+Cluster 1:
+  Top terms: maxi, dress, long, floral, women, casual, sleeve, split, neck, dresses
+  Sample items:
+    - Huiyuzhi Womens Sleeveless Racerback Floral Print Casual Long Maxi Dresses,Black,XLarge
+    - Verdusa Women's Short Sleeve Loose Long Maxi Lounge Dress with Pockets Mustard Yellow L
+    - Miusol Women's Elegant Sleeveless Halter Black Lace Bridesmaid Maxi Dress (Small, Green)
+    - LEANI Women's V Neck Ruffle Adjustable Strappy Summer Beach Long Maxi Dress Pink
+    - Verdusa Women's Boat Neck Batwing Sleeve Caftan Baggy Harem Oversized Maxi Dress Black White M
+
+Cluster 2:
+  Top terms: black, women, men, size, white, blue, medium, red, 10, boot
+  Sample items:
+    - Mento Streamtail
+    - RONNOX Women's 3-Pairs Bright Colored Calf Compression Tube Sleeves
+    - PattyBoutik Women Crewneck Eyelet Cold Shoulder Sweater (Grayish Violet Small)
+    - 2 Pcs Oval Cabochon CAB Flatback Semi-precious Gemstone Ring Face 25x18mm (Zebra jasper)
+    - Result Core Men's Soft Shell II Gilet Red 3XL
+
+Cluster 3:
+  Top terms: keychain, key, chain, gift, ring, keyring, car, gifts, holder, lanyard
+  Sample items:
+    - Cadtealir Highlight Stainless steel metal tab lock bucle inlaid with 18k golden chip with full grain nappa leather strap car key chain lanyard clips ring for nissan for men woman accessories
+    - KEYCHIN TV Show Inspired Gift Moira Fans Keychain TV Sitcom Comedy Gift(You Just Fold It In keychain)
+    - YANPENG Cute French Bulldog Key Pendant School Bag Handbag Car Keychain Pendant
+    - Eigso Cousin Keychain Cousin by Chance Friends by Choice Friendship Jewelry Keychain Gift for Cousin Cousin Gifts Friends Gifts Friendship Gifts for Brother Friends Sister(Cousin by Chance KR)
+    - Mini Soccer Cleat KeyChain (Italy)
+
+Cluster 4:
+  Top terms: piece, outfits, set, sets, tracksuit, crop, pants, women, shorts, long
+  Sample items:
+    - Corfrute Women Workout Sets Seamless Ribbed Crop Sport Bra Two Piece High Waist Yoga Leggging Outfits (Wine Red01, S)
+    - SheIn Women's 2 Piece Outfit Notched Neck 3/4 Sleeve Blazer and Wide Leg Belted Pants Set Light Green Large
+    - Comfy Women's Stylish Workout Hood Tracksuits Chic Soft 2-Piece Outfit Pink Small
+    - Nimsruc Two Piece Outfits For Women Jogging Suits Casual Tracksuit
+    - ECHOINE Womens Letter Two Piece Outfits - Color Block Short Sleeve +Short Pants Set Sweatsuit Bodysuit
+
+Cluster 5:
+  Top terms: leggings, yoga, pants, workout, high, tummy, control, waist, women, waisted
+  Sample items:
+    - Lookatool Women's High Waist Fitness Yoga Sport Pants (S, Multicolor 15)
+    - Zeronic High Waist Yoga Pants for Women with Pockets Tummy Control Workout Leggings for Women 4 Way Stretch Yoga Leggings(Purpleblack, Large)
+    - QYQ Womens Printed Leggings with Pockets High Waisted Yoga Pants for Women Workout Leggings Running Tights
+    - Tagoo Women’s Elastic Pants Leggings Tights Comfortable for Yoga/Running/Training/Workout/Gym/Outfit/Athletes (Medium, Black)
+    - TSLA Yoga Pants Mid-Waist/High-Waist Tummy Control w Side/Hidden Pocket Series, Yogabasic Thick Contour(fyp42) - Aqua, Large (Size 10-12_Hip41-43 Inch)
+
+Cluster 6:
+  Top terms: sweater, pullover, knit, long, sleeve, sweaters, neck, jumper, tops, knitted
+  Sample items:
+    - Sexyshine Women's Casual Fall Knit Long Sleeve Tassels Irregular Loose Cardigan Pullover Striped Sweater Poncho
+    - ZESICA Women's Long Sleeve Crew Neck Camouflage Printed Knit Casual Loose Pullover Sweater Jumper Tops
+    - Shanfetl Women Sweaters Long Sleeve V Neck Solid Casual Knitted Pullover Tops White
+    - Light Up Women's Christmas Sweater, 3D Gingerbread Man Cat Ugly Sweater Knit New Year Eve Holiday Funny Sweatshirt
+    - Nfsion Womens Casual Turtleneck Oversized Tunic Fall Sweaters Long Batwing Sleeve Spilt Hem Pullover Sweater Tops Small White
+
+Cluster 7:
+  Top terms: costume, halloween, cosplay, mask, adult, party, dress, costumes, outfit, women
+  Sample items:
+    - Tipsy Elves’ Women’s Daredevil Costume - Red White and Blue Stunt Performer Halloween Jumpsuit
+    - Halloween Mask Spider Man Cosplay Costumes Lycra Mask Superhero Lenses (Black)
+    - Boomtrader Women ST4 Costume Cheerleader Uniform Cosplay Hawkins High School Outfit Suit Halloween Party Dress Up
+    - Renaissance Dresses for Women Medieval Costume Irish Long Over Dress Victorian Vintage Halloween Olive Green XL
+    - Voglee Ew Anime Sexy Underwear Bra Set Cosplay Costume Bikini Set
+
+Cluster 8:
+  Top terms: large, xx, black, women, men, white, blue, hoodie, jersey, mens
+  Sample items:
+    - HOYISOX Diamond Print 20-30 mmHg Running and Sports Compression Socks for Men & Women, Recovery Fast (X-Large, Purple diamond)
+    - Michael Kors Jet Set Travel Large Top Zip Wristlet - Signature Monogram (Beige/Ebony)
+    - MICHAEL Michael Kors Large East/West Crossbody Optic White Multi One Size
+    - adidas Boys Active Muscle Tee Sport Logo Tank (Red/White/Black, Large (14/16))
+    - DC Comics Batman Panty Set 3-Pack with Lace Trim (Large)
+
+Cluster 9:
+  Top terms: brown, leather, men, sunglasses, dark, boot, women, size, mens, large
+  Sample items:
+    - Lace Affair Underwire Balcony Bra Blue Print/Chocolate Brown US 34F
+    - FZ-Carpio-77 Women's Fashion Lace Up Side Zipper Chunky Heel Keen High Boot Shoes (8 B(M) US, Brown)
+    - Lemegeton Pagan Hermetic Tetragrammaton Pentagram Metal Craft Connector Cuff Bracelet Men Women (brown antique coper)
+    - Coal Headwear Wilderness Low Sp - Light Brown Wolf
+    - Rieker Mens 26758-25 Brown EU46 Brown
+

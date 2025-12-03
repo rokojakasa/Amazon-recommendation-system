@@ -1,7 +1,7 @@
 #!/bin/bash
-#BSUB -J minhash_job                     # Job name
-#BSUB -o minhash_job.out                 # Output log file
-#BSUB -e minhash_job.err                 # Error log file
+#BSUB -J minhash_job2                     # Job name
+#BSUB -o minhash_job2.out                 # Output log file
+#BSUB -e minhash_job2.err                 # Error log file
 #BSUB -q hpc                           # Queue (no GPU needed)
 #BSUB -n 8                                # Number of CPU cores
 #BSUB -R "rusage[mem=4G]"                # Memory per core
@@ -11,6 +11,7 @@
 module load python3
 source ~/minhash_env/bin/activate
 
-cd /zhome/4f/1/223566/home/computational_tools
+cd /zhome/4f/1/223566/home/computational_tools/Amazon-recommendation-system
+export PYTHONPATH=$(pwd):$PYTHONPATH
+python src/recommender_lsh.py
 
-python Amazon_LSH_v2.py

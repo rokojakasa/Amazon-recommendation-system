@@ -4,7 +4,9 @@ data/
 # HPC outputs
 *.err
 *.out
-
+*.lsf
+!run_gpuv100.lsf
+checkpoints/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -212,3 +214,19 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+# Raw data
+data/
+*.jsonl.gz
+
+# Heavy model artifacts
+results/*.pkl
+results/*.bin
+
+# Keep human-readable results
+!results/*.txt
+
+# Python cache
+__pycache__/
+*.pyc
