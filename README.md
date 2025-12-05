@@ -165,6 +165,63 @@ python -m src.recommender_kmeans
 
 ---
 
+## 6. Benchmarking
+
+### Script: `src/benchmark_lsh.py` `src/benchmark_lsh_withram.py` `src/benchmark_bpr.py`
+
+LSH Benchmark (Speed & Scalability)
+
+Benchmarks the raw execution speed of the custom implementation against datasketch to identify Big-O complexity behavior and latency bottlenecks.
+
+Pipeline:
+
+Load and downsample 5-core interaction data to target size (e.g., 50k, 200k, 15M rows).
+
+Build Custom LSH Index (measure wall-clock time).
+
+Build datasketch Index (measure wall-clock time).
+
+execute random queries to measure average Latency per item.
+
+Output execution time ratios (e.g., "5.8x faster").
+
+Run: python -m src.benchmark_lsh
+
+LSH Benchmark (Memory & Accuracy)
+
+Profiles resource consumption and algorithmic correctness by tracking peak memory usage and comparing retrieved candidates against a brute-force ground truth.
+
+Pipeline:
+
+Load data and enable tracemalloc memory tracing.
+
+Build indices for both implementations (capture Peak RAM usage in MB).
+
+For a set of query items, compute the Exact Jaccard top-5 neighbors (Ground Truth).
+
+Query both LSH indices and check for intersections with the Ground Truth.
+
+Compute and export Recall@5 percentages and Memory footprints.
+
+Run: python -m src.benchmark_lsh_withram
+
+Matrix Factorization (BPR) Benchmark
+
+Benchmarks the training efficiency of a flexible custom PyTorch implementation against the optimized implicit library to quantify the overhead of Python-based sampling.
+
+Pipeline:
+
+Load pre-split training, validation, and test data.
+
+Initialize models with identical embedding dimensions (d=128).
+
+Train custom PyTorch model for 1 epoch on CPU (measure time).
+
+Train implicit library model for 1 epoch on CPU (measure time).
+
+Output speedup factor (e.g., "740x faster") to console.
+
+Run: python -m src.benchmark_bpr
 
 ## Summary of Included Algorithms
 | Script                    | Methodology                               | Course Topic                     | New Topic? |
