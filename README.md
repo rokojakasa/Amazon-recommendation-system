@@ -22,6 +22,13 @@ This repository implements three recommendation approaches on the Amazon Fashion
 │   ├── recommender_cfBPR.py    # Matrix Factorization + BPR (User–item CF)
 │   ├── recommender_tfidf.py  # TF-IDF content-based recommender
 │   ├── recommender_kmeans.py # K-means clustering on TF-IDF
+│   ├── benchmark_lsh.py # benchmark comparing our lsh with standard library
+│   ├── benchmark_lsh_withram.py # benchmark comparing our lsh with standard        │library+ram usage check
+│   ├── benchmark_bpr.py # benchmark comparing our bpr with standard library
+│   ├── benchmarkvisualization.py # creates plots with data that was put manually after collecting
+│   ├── kmeans_elbow_mykmeans.py #
+│   ├── recommender_mykmeans.py #
+│   ├── visualization.py # 
 │   └── query_lsh.py          # Optional: fast querying of saved LSH model
 │
 ├── download_data.sh          # Shell script for downloading requested data
@@ -31,7 +38,7 @@ This repository implements three recommendation approaches on the Amazon Fashion
 ```
 ## Dataset Setup (Required Before Running Any Script)
 
-This project uses the **Amazon Fashion review and metadata dataset**, which is **not included in this repository** due to its large size.
+This project uses the **Amazon Fashion and Electronics review and metadata dataset**, which is **not included in this repository** due to its large size.
 
 You must manually download the dataset **before running any code** using **one of the following options**:
 
