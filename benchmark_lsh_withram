@@ -1,0 +1,164 @@
+import time
+import random
+import sys
+import tracemalloc
+import numpy as np
+import pandas as pd
+from datasketch import MinHash, MinHashLSH
+
+# Import the module
+import recommender_lsh as my_lsh 
+
+# --- CONFIG ---
+SAMPLE_SIZE = 15000000    # Keep this moderate for accuracy testing
+NUM_HASHES = 128
+THRESHOLD = 0.5
+NUM_QUERY_ITEMS = 20   # Number of items to test for accuracy
+K = 5                  # Top-K neighbors to look for
+
+def get_exact_jaccard(set1, set2):
+    if not set1 or not set2: return 0.0
+    intersection = len(set1.intersection(set2))
+    union = len(set1.union(set2))
+    return intersection / union
+
+def get_ground_truth_top_k(query_id, item_to_users, k=5):
+    """
+    Brute-force scan of ALL items to find the REAL top-K neighbors.
+    This is slow (O(N)), which is why we only do it for a few query items.
+    """
+    query_users = item_to_users[query_id]
+    scores = []
+    
+    for other_id, other_users in item_to_users.items():
+        if other_id == query_id: continue
+        score = get_exact_jaccard(query_users, other_users)
+        if score > 0:
+            scores.append((other_id, score))
+            
+    # Sort descending and take top K
+    scores.sort(key=lambda x: x[1], reverse=True)
+    return [pid for pid, score in scores[:k]]
+
+def run_benchmark():
+    print("="*60)
+    print("      ADVANCED LSH BENCHMARK: TIME, MEMORY, & ACCURACY")
+    print("="*60)
+    
+    # 1. SETUP
+    print(">>> 1. LOADING DATA...")
+    df = my_lsh.src.data_loader.load_preprocess_5core(
+        "meta_Electronics.jsonl.gz", "Electronics_5core.csv.gz"
+    )
+    if len(df) > SAMPLE_SIZE:
+        df = df.sample(n=SAMPLE_SIZE, random_state=42)
+    
+    item_to_users = my_lsh.build_item_to_users(df)
+    print(f"    Items: {len(item_to_users)} | Config: K={K}, Hashes={NUM_HASHES}")
+
+    # ---------------------------------------------------------
+    # ROUND 1: YOUR IMPLEMENTATION (Time + Memory)
+    # ---------------------------------------------------------
+    print("\n>>> 2. PROFILING YOUR IMPLEMENTATION...")
+    tracemalloc.start()
+    t0 = time.time()
+    
+    hash_seeds = my_lsh.make_hash_seeds(my_lsh.NUM_HASHES)
+    sigs = my_lsh.build_signatures(item_to_users, hash_seeds)
+    bands = my_lsh.build_lsh_bands(sigs)
+    
+    my_build_time = time.time() - t0
+    current, my_peak_mem = tracemalloc.get_traced_memory()
+    tracemalloc.stop()
+    
+    print(f"    [Yours] Build Time: {my_build_time:.4f} s")
+    print(f"    [Yours] Peak RAM:   {my_peak_mem / 10**6:.2f} MB")
+
+    # ---------------------------------------------------------
+    # ROUND 2: DATASKETCH LIBRARY (Time + Memory)
+    # ---------------------------------------------------------
+    print("\n>>> 3. PROFILING DATASKETCH LIBRARY...")
+    tracemalloc.start()
+    t1 = time.time()
+    
+    lsh_ds = MinHashLSH(threshold=THRESHOLD, num_perm=NUM_HASHES)
+    minhashes_ds = {}
+    for pid, users in item_to_users.items():
+        m = MinHash(num_perm=NUM_HASHES)
+        for u in users:
+            m.update(str(u).encode('utf8'))
+        minhashes_ds[pid] = m
+        lsh_ds.insert(str(pid), m)
+        
+    ds_build_time = time.time() - t1
+    current, ds_peak_mem = tracemalloc.get_traced_memory()
+    tracemalloc.stop()
+    
+    print(f"    [Lib]   Build Time: {ds_build_time:.4f} s")
+    print(f"    [Lib]   Peak RAM:   {ds_peak_mem / 10**6:.2f} MB")
+
+    # ---------------------------------------------------------
+    # ROUND 3: ACCURACY (RECALL@K)
+    # ---------------------------------------------------------
+    print(f"\n>>> 4. MEASURING ACCURACY (Recall@{K})...")
+    print("    (Calculating Brute-Force Ground Truth for comparisons - this takes a moment)")
+    
+    test_pids = random.sample(list(item_to_users.keys()), NUM_QUERY_ITEMS)
+    my_recalls = []
+    ds_recalls = []
+
+    for q_pid in test_pids:
+        # A. Ground Truth (The "Right" Answer)
+        true_top_k = set(get_ground_truth_top_k(q_pid, item_to_users, k=K))
+        
+        # If item has no neighbors, skip
+        if not true_top_k: continue
+            
+        # B. Your Candidates
+        my_cands = my_lsh.get_candidate_products(q_pid, sigs, bands)
+        # Refine candidates to top K using estimated jaccard (like in your report code)
+        my_top_k_tuples = my_lsh.get_top_k_similar_products(q_pid, K, sigs, bands)
+        my_top_k = set([pid for pid, score in my_top_k_tuples])
+        
+        # C. Datasketch Candidates
+        ds_cands = lsh_ds.query(minhashes_ds[q_pid])
+        # Datasketch just returns candidates; usually you'd sort them, but let's take raw intersection for LSH recall
+        # Or better: manually sort ds candidates by MinHash est
+        ds_scores = []
+        for c in ds_cands:
+            c_int = int(c)
+            if c_int == q_pid: continue
+            est = minhashes_ds[q_pid].jaccard(minhashes_ds[c_int])
+            ds_scores.append((c_int, est))
+        ds_scores.sort(key=lambda x: x[1], reverse=True)
+        ds_top_k = set([pid for pid, score in ds_scores[:K]])
+
+        # D. Calculate Recall
+        # How many of the "True" items did we find?
+        my_hit = len(my_top_k.intersection(true_top_k))
+        ds_hit = len(ds_top_k.intersection(true_top_k))
+        
+        my_recalls.append(my_hit / len(true_top_k))
+        ds_recalls.append(ds_hit / len(true_top_k))
+
+    print(f"\n    [Yours] Avg Recall@{K}: {np.mean(my_recalls)*100:.1f}%")
+    print(f"    [Lib]   Avg Recall@{K}: {np.mean(ds_recalls)*100:.1f}%")
+
+    # ---------------------------------------------------------
+    # SUMMARY TABLE
+    # ---------------------------------------------------------
+    print("\n" + "="*60)
+    print(f"{'METRIC':<15} | {'YOUR CODE':<15} | {'DATASKETCH':<15} | {'WINNER'}")
+    print("-" * 60)
+    
+    def winner(my, lib, lower_is_better=True):
+        if lower_is_better: return "Yours" if my < lib else "Lib"
+        else: return "Yours" if my > lib else "Lib"
+
+    print(f"{'Build Time':<15} | {my_build_time:.4f} s{'':<8} | {ds_build_time:.4f} s{'':<8} | {winner(my_build_time, ds_build_time)}")
+    print(f"{'Memory Usage':<15} | {my_peak_mem/1e6:.1f} MB{'':<8} | {ds_peak_mem/1e6:.1f} MB{'':<8} | {winner(my_peak_mem, ds_peak_mem)}")
+    print(f"{'Recall@'+str(K):<15} | {np.mean(my_recalls)*100:.1f} %{'':<9} | {np.mean(ds_recalls)*100:.1f} %{'':<9} | {winner(np.mean(my_recalls), np.mean(ds_recalls), False)}")
+    print("="*60)
+
+if __name__ == "__main__":
+    run_benchmark()
