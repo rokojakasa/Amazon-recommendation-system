@@ -1,3 +1,4 @@
+import os
 import time
 import random
 import sys
@@ -6,8 +7,10 @@ import numpy as np
 import pandas as pd
 from datasketch import MinHash, MinHashLSH
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 # Import the module
-import recommender_lsh as my_lsh 
+from src import recommender_lsh as my_lsh 
 
 # --- CONFIG ---
 SAMPLE_SIZE = 15000000    # Keep this moderate for accuracy testing
