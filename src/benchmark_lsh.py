@@ -1,15 +1,16 @@
 import time
 import random
 import sys
+import os
 import numpy as np
 import pandas as pd
 from datasketch import MinHash, MinHashLSH
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-# Import your module
-import recommender_lsh as my_lsh 
+from src import recommender_lsh as my_lsh 
 
 # --- CONFIG ---
-SAMPLE_SIZE = 15000000  # Safe size for 16GB RAM laptop
+SAMPLE_SIZE = 20000
 NUM_HASHES = 128
 THRESHOLD = 0.5
 NUM_QUERY_ITEMS = 20 

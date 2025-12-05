@@ -3,7 +3,10 @@ import numpy as np
 import scipy.sparse as sparse
 import implicit
 import torch
-import recommender_cfBPR as my_bpr 
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+import src.recommender_cfBPR as my_bpr 
 from src.data_loader import load_preprocess_split
 
 def benchmark_bpr():
