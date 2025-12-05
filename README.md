@@ -184,8 +184,10 @@ Build datasketch Index (measure wall-clock time).
 execute random queries to measure average Latency per item.
 
 Output execution time ratios (e.g., "5.8x faster").
+
+Run:
 ```bash
-Run: python -m src.benchmark_lsh
+python -m src.benchmark_lsh
 ```
 #### LSH Benchmark (Memory & Accuracy)
 
@@ -202,8 +204,10 @@ For a set of query items, compute the Exact Jaccard top-5 neighbors (Ground Trut
 Query both LSH indices and check for intersections with the Ground Truth.
 
 Compute and export Recall@5 percentages and Memory footprints.
+
+Run:
 ```bash
-Run: python -m src.benchmark_lsh_withram
+python -m src.benchmark_lsh_withram
 ```
 #### Matrix Factorization (BPR) Benchmark
 
@@ -220,8 +224,10 @@ Train custom PyTorch model for 1 epoch on CPU (measure time).
 Train implicit library model for 1 epoch on CPU (measure time).
 
 Output speedup factor (e.g., "740x faster") to console.
+
+Run:
 ```bash
-Run: python -m src.benchmark_bpr
+python -m src.benchmark_bpr
 ```
 ## Summary of Included Algorithms
 | Script                    | Methodology                               | Course Topic                     | New Topic? |
