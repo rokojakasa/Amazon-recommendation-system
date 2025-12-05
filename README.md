@@ -13,16 +13,20 @@ This repository implements three recommendation approaches on the Amazon Fashion
 ├── results/                  # Script outputs (examples + LSH pkl files)
 │   ├── lsh_examples.txt
 │   ├── tfidf_examples.txt
+│   ├── cf_BPR_examples.txt
 │   └── cluster_examples.txt
 │
 ├── src/
 │   ├── data_loader.py        # Shared loader for gz JSONL -> pandas
 │   ├── recommender_lsh.py    # MinHash + LSH (item–item CF)
+│   ├── recommender_cfBPR.py    # Matrix Factorization + BPR (User–item CF)
 │   ├── recommender_tfidf.py  # TF-IDF content-based recommender
 │   ├── recommender_kmeans.py # K-means clustering on TF-IDF
 │   └── query_lsh.py          # Optional: fast querying of saved LSH model
 │
-├── requirements.txt
+├── download_data.sh          # Shell script for downloading requested data
+├── run_hpc.sh                # Script for running a python file on HPC cluster
+├── run_gpuv100.lsf           # Script for running python file on HPC with GPU
 └── README.md
 ```
 ## Dataset Setup (Required Before Running Any Script)
@@ -38,16 +42,19 @@ https://amazon-reviews-2023.github.io/index.html
 Required files:
 - `Amazon_Fashion.jsonl.gz`
 - `meta_Amazon_Fashion.jsonl.gz`
-- `meta_Electronics.jsonl.gz
-- `Electronics - 5core`
+- `meta_Electronics.jsonl.gz`
+- Electronics - 5core
 - optional - train/valid/test split for Electronics
 
-After downloading, place both files into the local directory:
+After downloading, place files into the local directory:
 
 ```text
 data/
 ├── Amazon_Fashion.jsonl.gz
 └── meta_Amazon_Fashion.jsonl.gz
+.
+.
+.
 ```
 
 ### Option 2: Shell script
