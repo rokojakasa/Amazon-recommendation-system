@@ -14,7 +14,7 @@ This repository implements three recommendation approaches on the Amazon Fashion
 │   ├── lsh_examples.txt
 │   ├── tfidf_examples.txt
 │   ├── cf_BPR_examples.txt
-│   └── cluster_examples.txt
+│   └── mycluster_examples.txt
 │
 ├── src/
 │   ├── data_loader.py        # Shared loader for gz JSONL -> pandas
@@ -148,7 +148,7 @@ python -m src.recommender_tfidf
 
 ## 5. K-Means Clustering on TF-IDF Vectors
 
-### Script: `src/recommender_kmeans.py`  
+### Script: `src/recommender_mykmeans.py`  
 ### Course topic: Clustering  
 
 Clusters all products in the TF-IDF space using K-means to identify semantic item groups (e.g., graphic tees, maxi dresses, yoga leggings, Halloween costumes).
@@ -161,7 +161,9 @@ Pipeline:
 5. Export cluster summaries to `results/cluster_examples.txt`
 
 Run:
-python -m src.recommender_kmeans
+python -m src.recommender_mykmeans 
+or
+python -m src.recommender_mykmeans (for standard library output) 
 
 ---
 
