@@ -169,7 +169,7 @@ python -m src.recommender_kmeans
 
 ### Script: `src/benchmark_lsh.py` `src/benchmark_lsh_withram.py` `src/benchmark_bpr.py`
 
-LSH Benchmark (Speed & Scalability)
+#### LSH Benchmark (Speed & Scalability)
 
 Benchmarks the raw execution speed of the custom implementation against datasketch to identify Big-O complexity behavior and latency bottlenecks.
 
@@ -187,7 +187,7 @@ Output execution time ratios (e.g., "5.8x faster").
 
 Run: python -m src.benchmark_lsh
 
-LSH Benchmark (Memory & Accuracy)
+#### LSH Benchmark (Memory & Accuracy)
 
 Profiles resource consumption and algorithmic correctness by tracking peak memory usage and comparing retrieved candidates against a brute-force ground truth.
 
@@ -205,7 +205,7 @@ Compute and export Recall@5 percentages and Memory footprints.
 
 Run: python -m src.benchmark_lsh_withram
 
-Matrix Factorization (BPR) Benchmark
+#### Matrix Factorization (BPR) Benchmark
 
 Benchmarks the training efficiency of a flexible custom PyTorch implementation against the optimized implicit library to quantify the overhead of Python-based sampling.
 
